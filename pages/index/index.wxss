@@ -1,0 +1,156 @@
+@import "/style/page.wxss";
+page{
+  padding-bottom: 100rpx;
+}
+.index_header{
+  font-size: 32rpx;
+  color: #212121;
+  padding: 30rpx 40rpx 20rpx;
+}
+.index_header_name{
+  color: #222;
+}
+.icon-down{
+  margin:0 16rpx;
+  color: #111;
+}
+.search_bar{
+  padding-left: 60rpx;
+}
+.index_banner{
+  padding: 0rpx;
+}
+.swiper_box {
+  width: 100%;
+  height: 450rpx; 
+  border-radius: 6rpx; 
+  /* margin-bottom: 66rpx; */
+}
+.swiper_box .wx-swiper-dots.wx-swiper-dots-horizontal{
+    margin-bottom: 2rpx;
+    margin-left: 260rpx;
+}
+.swiper_box .wx-swiper-dot{
+    width:8rpx;
+    display: inline-flex;
+    height: 8rpx; 
+    align-items: center;
+    background: #fff;
+}
+.swiper_box .wx-swiper-dot::before{
+    content: '';
+    flex-grow: 1;  
+    background: rgba(255,255,255,1);
+    border-radius: 8rpx
+}
+.swiper_box .wx-swiper-dot-active{
+  width: 12rpx;
+  height: 12rpx;
+}
+.swiper-box .wx-swiper-dot-active::before{
+    background:rgba(255,255,255,1);    
+}
+.banner_img{
+  display: block;
+  width: 100%;
+  height: 450rpx;
+}
+.header_nav{
+  padding: 42rpx 100rpx 44rpx;
+  font-size: 24rpx;
+  text-align: center;
+}
+.home_icon{
+  width: 84rpx;
+  height: 84rpx;
+  display: block;
+  margin:0 auto 28rpx;
+}
+.blank_bar{
+  width: 100%;
+  height: 12rpx;
+  background: #f5f5f5;
+}
+.publish_icon{
+  position: fixed;
+  width: 144rpx;
+  height: 144rpx;
+  right: 0;
+  bottom: 0;
+}
+
+.index_con_tit{
+  padding-top: 40rpx;
+  font-size: 40rpx;
+  text-align: center;
+  color: #212121;
+  padding-bottom: 30rpx;
+}
+
+.fix_tit{
+  padding: 30rpx 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 2;
+}
+.fix_con{
+  margin-top: 50rpx;
+}
+.index_con_tit text{
+  position: relative;
+}
+.index_con_tit text.active_tit:after{
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 8rpx;
+  background: #f00;
+  opacity: .7;
+  bottom: -6rpx;
+  left: 0;
+}
+.atten_icon.atten_avtive{
+  border: 1px solid #f1f1f1;
+  color: #898989;
+}
+
+.atten_icon{
+  width: 134rpx;
+  line-height: 56rpx;
+  color: #ff4536;
+  border: 1px solid #ffe5e3;
+  text-align: center;
+  border-radius: 42rpx;
+  margin-right: 20rpx;
+}
+
+.product_item_Title {
+  height: 80rpx;
+  margin: 10rpx 40rpx;
+  line-height: 40rpx;
+  overflow: hidden;
+  text-align:justify;
+}
+.product_item_Price {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 40rpx;
+  color: black;
+  margin: 10rpx 40rpx 20rpx 40rpx;
+}
+.product_item_purches {
+  width: 200rpx;
+  font-size: 25rpx;
+  float: right;
+}
+.product_Item_Pic {
+  margin: 40rpx;
+  width: 90%;
+  display: block;
+}
+.order_all {
+  float: right;
+  margin-right: 40rpx;
+}

@@ -1,0 +1,11 @@
+{
+  "backgroundColor": "#000000",
+  "navigationBarTitleText": "",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#000000",
+  "enablePullDownRefresh": false,
+  
+  "usingComponents": {
+    "shares": "/component/shares/shares"
+  }
+}

@@ -1,0 +1,48 @@
+<view>
+  <view class="cell">
+    <input placeholder="收件人姓名" placeholder-class="place_holder" value="{{address.name}}" bindinput="bindinputName"/>
+  </view>
+  <view class="cell mar18">
+    <input placeholder="手机号码" placeholder-class="place_holder" value="{{address.mobile}}" bindinput="bindinputMobile"/>
+  </view>
+  <view class="cell">
+    <input placeholder-class="place_holder" value="{{address.provinceName +  address.cityName + address.areaName}}" disabled="true" bindtap="chooseRegion" placeholder="省、市、区" bindtap="chooseRegion"/>
+  </view>
+  <view class="cell hei100 mar18 ">
+    <input placeholder="街道地址" placeholder-class="place_holder" value="{{address.address}}" bindinput="bindinputAddress"/>
+  </view>
+
+  <view class="cell">
+    <view class="cell_cn light">设为默认地址</view>
+    <switch bindchange="bindIsDefault" color="#FF5E5E" checked="{{isDefault}}" disabled="true"/>
+  </view>
+
+  <view class="flex aic cart_bot ST_light">
+    <view class="cell_cn cart_btn dis" bindtap='deleteAddress' wx:if="{{showDel}}">删除</view>
+    <view class="cell_cn cart_btn" bindtap="saveAddress">保存</view>
+  </view>
+</view>
+
+<!-- 省市县弹框 -->
+
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class="region-select light">
+    <!-- 顶部栏 -->
+    <view class="hd flex">
+      <view class="region-selected cell_cn flex">
+        <view class="item {{item.id == 0 ? 'disabled' : ''}} {{(regionType -1) === index ? 'selected' : ''}}" bindtap="selectRegionType" data-region-type-index="{{index}}" wx:for="{{selectRegionList}}" wx:key="index">{{item.name}}</view>
+      </view>
+      <view class="done {{selectRegionDone ? '' : 'disabled'}}" bindtap="doneSelectRegion">完成</view>
+    </view>
+    <!-- 省市县栏 -->
+    <view class="bd">
+      <scroll-view scroll-y class="region-list">
+        <view class="item {{item.selected ? 'selected' : ''}}" bindtap="selectRegion" data-region-index="{{index}}" wx:for="{{regionList}}" wx:key="index">{{item.name}}</view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+
+<!-- 调用modal组件 -->
+<popup id="popup" content="确定要删除地址？" btn_no="取消" btn_ok="确定" bind:error="_error" bind:success="_success"/>

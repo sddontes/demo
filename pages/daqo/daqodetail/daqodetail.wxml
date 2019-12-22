@@ -1,0 +1,64 @@
+<view class="flex aic daqo_bot">
+    <image src="/images/daqo_collect.png" class="share_white_icon" bindtap='handleCollect' data-user-id="{{myuserId}}" data-id="{{fWiki.id}}" wx:if="{{!fWiki.isMyFavorites}}"></image>
+    <image class="share_white_icon" src="/images/daqo_collect_active.png" bindtap='handleCollect' data-user-id="{{myuserId}}" data-id="{{fWiki.id}}" wx:if="{{fWiki.isMyFavorites}}"></image>
+    <button class="share_btn" open-type="share" hover-class='none' data-items="{{fWiki}}" data-index="{{index}}">
+          <image src="/images/daqo_share.png" class="share_white_icon"></image>
+    </button>
+    <!-- <view class="daqo_btn">暂无商品</view> -->
+  </view>
+
+<view>
+  <image src="{{fWiki.thumbnail}}" class="daqo_icon" style="margin-top:{{top}}px"></image>
+
+
+  <view class="daqo_detail_con light" animation="{{animationData}}"bindtouchstart='ontouchstart' bindtouchmove='ontouchmove' bindtouchend='ontouchend'>
+    <view class="daqo_tit regular">{{fWiki.title}}</view>
+    <view>{{fWiki.latinname}}</view>
+    <view>{{fWiki.sectionName}} {{fWiki.genusName}}</view>
+    <view class="daqo_detail">{{fWiki.content}}</view>
+    <view wx:if="{{users.length>0}}">
+      <view>{{favorites}}人收藏</view>
+      <view class="zan_list flex">
+        <block wx:for="{{users}}" wx:for-item="zitem" wx:for-index="zindex" wx:key="{{zindex}}">
+          <view class="zan_icon" data-id="{{zitem.userId}}" bindtap="goHomePage" wx:if="{{zindex<8}}">
+            <image src="{{zitem.headPic}}" style="width:100%;height:100%;border-radius:50%;"></image>
+          </view>
+        </block>
+        <view class="comment_account" wx:if="{{users.length>8&&users.length<99}}"  data-upvotes="{{users}}"  data-name="{{fWiki.title}}" bindtap="goZanList">{{users.length}}</view>
+        <view class="comment_account" wx:if="{{users.length>99}}"  data-upvotes="{{users}}"  data-name="{{fWiki.title}}" bindtap="goZanList">99+</view>
+      </view>
+    </view>
+      <view>相关文章</view>
+      <view>
+      <block wx:for="{{litemallTopics}}" wx:key="index">
+        <navigator url="/pages/wiki/wikidetail/wikidetail?id={{item.id}}" hover-class="none" class="about_arc">{{item.title}}</navigator>
+      </block>
+      </view>
+    <view class="about_googds">
+    <view>相关商品</view>
+    <view class="flex space goods_lsit">
+      <block wx:for="{{goodsList}}" wx:key="{{index}}" > 
+        <navigator url="/pages/market/goods/goods?id={{item.id}}"  hover-class="none">
+          <view class="goods_item">
+            <view class="goods_ziying ST_light" wx:if="{{item.tagId == '花兮自营'}}">自营</view>
+            <view class="goods_bg ST_light" wx:if="{{!item.isOnSale}}">已售罄</view>
+            <image src="{{item.picUrl}}" class="goods_img"></image>
+            <view>{{item.name}}</view>
+            <view class="col74">{{item.brief}}</view>
+            <view class="flex aic">
+              <!-- <text class="cart_type">{{item.tagId}}</text> -->
+              <text class="goods_price">￥{{item.retailPrice}}元</text>
+            </view>
+          </view>
+        </navigator>
+      </block>
+    </view>
+    </view>
+
+
+
+  </view>
+</view>
+
+
+<image src="/images/share_back.png" class="share_back" wx:if="{{share}}" bindtap='goIndex'></image>

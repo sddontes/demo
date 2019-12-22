@@ -1,0 +1,5 @@
+<view class="container">
+  <button disabled="{{disabled}}" type="primary" bindgetuserinfo="getUserInfo" open-type="getUserInfo">使用微信账号登录</button>
+  <!-- <button>使用新浪微博账号登录</button>
+  <button>使用QQ账号登录</button> -->
+</view>

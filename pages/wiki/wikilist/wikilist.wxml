@@ -1,0 +1,17 @@
+<view class="container">
+  <block wx:for="{{msgList}}" wx:key="{{index}}" > 
+    <navigator url="../wikidetail/wikidetail?id={{item.id}}" hover-class="none">
+      <view class='arc_item flex'>
+          <view class="cell_cn" style="align-self:stretch">      
+            <view>{{item.title}}</view>
+            <view class="arc_num">
+              <text>{{item.source}}</text>
+              <text>{{item.readCount}}阅读</text>
+              <text>{{item.commentCount}}评论</text>
+            </view>
+          </view>
+          <image class='arc_icon' src="{{item.picUrl}}" mode="aspectFill"></image>
+      </view>
+    </navigator>      
+  </block>
+</view>

@@ -1,0 +1,48 @@
+page{
+  background: #f9f9f9;
+  padding-bottom: 140rpx;
+}
+.addr_item{
+  background: #fff;
+  padding: 20rpx 36rpx 26rpx;
+  margin-top:20rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+}
+.sel_check{
+  width: 40rpx;
+  height: 40rpx;
+  display: block;
+  margin-right: 20rpx;
+}
+.addr_edit{
+  width: 37rpx;
+  height: 37rpx;
+  margin-left: 20rpx;
+}
+.addr_user_name{
+  margin-right: 40rpx;
+}
+.addr_detail{
+  color: #848484;
+  margin-top: 10rpx;
+}
+.addr_oper{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  line-height: 98rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+.addr_oper .btn1{
+  background: #ebebeb;
+}
+.addr_oper .btn2{
+  background: #FF5E5E;
+  color: #fff;
+}
+
+.icon-edit{
+  font-size: 40rpx;
+}

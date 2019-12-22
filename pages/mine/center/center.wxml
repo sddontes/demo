@@ -1,0 +1,74 @@
+<view class="container light">
+  <view class="flex henader_header" bindtap="goLogin">
+    <view class="header_icon">
+      <image src="{{userInfo.avatarUrl}}" style="width:100%;height:100%;border-radius:50%;"></image>
+      <image src="/images/v_icon.png" class="v_icon" wx:if="{{hidddenvcon}}"></image>
+    </view>
+    <text class="header_name regular">{{userInfo.nickName}}</text>
+    <navigator hover-class="none" url="../../order/order">
+      <view class="header_button">切换至{{isBuyer==1?"卖家":"买家"}}</view>
+    </navigator>
+      
+  </view>
+  <view class="blank_bar"></view>
+  <!-- 我的订单所有 -->
+  
+  <view class="order_items">
+    我的订单
+    <view class="order_all">全部订单 >></view>
+  </view>
+  <!-- 订单类型 -->
+  <view class="flex space center_nav">
+    <view bindtap="goattention">
+      <image src="http://images.huaxi0.com/imgs/MyUpload/house/E/B/8FD3EF709CA24B73ABB08E8C029271F2.jpeg" class="order_item_icon"></image>
+      <view class="nav_item">待付款</view>
+    </view>
+    <view bindtap="gomyfans">
+      <image src="http://images.huaxi0.com/imgs/MyUpload/house/E/B/8FD3EF709CA24B73ABB08E8C029271F2.jpeg" class="order_item_icon"></image>
+      <view class="nav_item">待收货</view>
+    </view>
+    <view>
+      <image src="http://images.huaxi0.com/imgs/MyUpload/house/E/B/8FD3EF709CA24B73ABB08E8C029271F2.jpeg" class="order_item_icon"></image>
+      <view class="nav_item">已完成</view>
+    </view>
+    <view>
+      <image src="http://images.huaxi0.com/imgs/MyUpload/house/E/B/8FD3EF709CA24B73ABB08E8C029271F2.jpeg" class="order_item_icon"></image>
+      <view class="nav_item">售后/退款</view>
+    </view>
+  </view>
+  <view class="blank_bar"></view>
+
+  <!-- <view class="cell" bindtap='gomessage'>
+    <text class="cell_cn">消息</text>
+    <view class="cell_ft">
+    <i class="iconfont icon-go"></i>
+    </view>
+  </view>
+  <view class="cell" bindtap='gohome'>
+    <text class="cell_cn">我的花房</text>
+    <view class="cell_ft"><i class="iconfont icon-go"></i></view>
+  </view>
+  <view class="cell" bindtap='goOrder'>
+    <text class="cell_cn">我的订单</text>
+    <view class="cell_ft"><i class="iconfont icon-go"></i></view>
+  </view> -->
+  <view class="cell" bindtap='goCollect'>
+    <text class="cell_cn">我的关注</text>
+    <view class="cell_ft"><i class="iconfont icon-go"></i></view>
+  </view>
+  <view class="cell" bindtap='goAddress'>
+    <text class="cell_cn">地址管理</text>
+    <view class="cell_ft">
+      <i class="iconfont icon-go"></i>
+    </view>
+  </view>
+  <navigator hover-class="none" url="../../doc/about/about"><view class="cell">
+    <text class="cell_cn">意见反馈</text>
+    <view class="cell_ft"><i class="iconfont icon-go"></i></view>
+  </view></navigator>  
+  <navigator hover-class="none" url="../../doc/about/about"><view class="cell">
+    <text class="cell_cn">关于花兮</text>
+    <view class="cell_ft"><i class="iconfont icon-go"></i></view>
+  </view></navigator>  
+  
+</view>

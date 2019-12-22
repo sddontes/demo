@@ -1,0 +1,39 @@
+@import "../../../wxParse/wxParse.wxss";
+.container{
+  padding: 40rpx;
+  font-size: 28rpx;
+  line-height: 48rpx;
+}
+image{
+  width: 100%;
+  height: 416rpx;
+  margin-bottom: 40rpx;
+}
+.arc_user image{
+  margin-bottom: 0;
+  margin-right: 36rpx;
+}
+.arc_user{
+  margin: 22rpx 0 66rpx;
+}
+.arc_tit{
+  font-size: 38rpx;
+  line-height: 52rpx;
+  font-weight: 500;
+}
+.v_icon{
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  top: 26rpx;
+  left: 30rpx;
+}
+
+.btn{
+  margin: 22rpx 0;
+}
+.btn.dis{
+  background: transparent;
+  color: #4e4e4e;
+  font-weight: 500;
+}

@@ -1,0 +1,35 @@
+/* 底部弹框 */
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.4;
+  overflow: hidden;
+  z-index: 1000;
+}
+.commodity_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding: 30rpx 0;
+}
+.commodity_attr_box input{
+  width: 81%;
+  background: #f6f6f6;
+  padding:10rpx 30rpx;
+  margin: 0 40rpx 20rpx;
+  /* height: 90rpx; */
+  font-size: 26rpx;
+}
+.send{
+  text-align: right;
+  margin-right: 40rpx;
+  color: #aaa;
+}

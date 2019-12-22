@@ -1,0 +1,13 @@
+@import "../../../wxParse/wxParse.wxss";
+.container{
+  padding: 40rpx;
+  /* text-align: center; */
+  font-size: 38rpx;
+}
+.container view{
+  margin: 40rpx 0 66rpx;
+}
+.container image{
+  width: 100%;
+  height: 550rpx;
+}

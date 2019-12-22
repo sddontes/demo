@@ -1,0 +1,21 @@
+.item .daqo_right {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: all .3s 0s ease;
+    transition: all .3s 0s ease;
+}
+
+.item.on .daqo_right {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.item .content {
+  display: none;
+  padding-left: 70rpx;
+}
+.item.on .content{
+  display: block;
+}
+.cell.content:before{
+  left: 70rpx
+}

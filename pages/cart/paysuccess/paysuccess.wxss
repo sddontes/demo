@@ -1,0 +1,11 @@
+page{
+  font-size: 28rpx;
+  color: #ff5e5e;
+  text-align: center;
+  line-height: 48rpx;
+}
+.pay_tit{
+  font-size: 56rpx;
+  margin-bottom: 60rpx;
+  margin-top: 190rpx;
+}

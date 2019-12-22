@@ -1,0 +1,96 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index1/index",
+    "pages/daqo/daqodetail/daqodetail",
+    "pages/market/goods/goods",
+    "pages/order/detail/detailp",
+    "pages/publish/pictures/pictures",
+    "pages/publish/arcticle/arcticle",
+    "pages/publish/priviewarc/priviewarc",
+    "pages/publish/index/index",
+    "pages/publish/draft/draft",
+    "pages/login/login",
+    "pages/mine/center/center",
+    "pages/mine/address/address",
+    "pages/mine/newaddress/newaddress",
+    "pages/mine/myhome/myhome",
+    "pages/mine/homepage/homepage",
+    "pages/mine/myfans/myfans",
+    "pages/mine/myattention/myattention",
+    "pages/mine/message/message",
+    "pages/mine/attmessage/attmessage",
+    "pages/mine/comments/comments",
+    "pages/mine/support/support",
+    "pages/mine/attention/attention",
+    "pages/mine/collectarc/collectarc",
+    "pages/market/index/index",
+    "pages/market/marketlist/marketlist",
+    "pages/cart/tmpIndex/tmpIndex",
+    "pages/cart/index/index",
+    "pages/cart/paysuccess/paysuccess",
+    "pages/cart/payconfirm/payconfirm",
+    "pages/cart/conrimeorder/confirmorder",
+    "pages/location/location",
+    "pages/daqo/daqo/daqo",
+    "pages/daqo/daqolist/daqolist",
+    "pages/daqo/canvas/canvas",
+    "pages/daqo/report/report",
+    "pages/search/search",
+    "pages/doc/about/about",
+    "pages/doc/privacy/privacy",
+    "pages/doc/standard/standard",
+    "pages/order/order/order",
+    "pages/order/orderdetail/orderdetail",
+    "pages/wiki/picdetail/picdetail",
+    "pages/wiki/index/index",
+    "pages/wiki/wikilist/wikilist",
+    "pages/wiki/wikidetail/wikidetail",
+    "pages/demo/demo",
+    "pages/publish/receivezan/receivezan",
+    "pages/pro",
+    "pages/productDetail/productDetail",
+    "component/product/product",
+    "pages/purchaseCar/purchaseCar"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationStyle": "",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#747474",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "selectedColor": "#747474",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tab_icon01.png",
+        "selectedIconPath": "images/tab_icon0101.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/market/index/index",
+        "iconPath": "images/tab_icon02.png",
+        "selectedIconPath": "images/tab_icon0202.png",
+        "text": "花市"
+      },
+      {
+        "pagePath": "pages/cart/tmpIndex/tmpIndex",
+        "iconPath": "images/tab_icon03.png",
+        "selectedIconPath": "images/tab_icon0303.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/mine/center/center",
+        "iconPath": "images/tab_icon04.png",
+        "selectedIconPath": "images/tab_icon0404.png",
+        "text": "我"
+      }
+    ]
+  }
+}

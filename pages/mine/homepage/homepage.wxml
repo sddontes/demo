@@ -1,0 +1,97 @@
+<view class="container">
+<!-- 点击登录 -->
+  <view class="flex">
+    <view class="header_icon">
+      <image src="{{list[0].headPic}}" style="width:100%;height:100%;border-radius:50%;"></image>
+      <!-- <image src="/images/v_icon.png" class="v_icon"></image> -->
+    </view>
+    <text class="header_name cell_cn">{{list[0].userName}}</text>
+    <view class="attention_btn {{list[0].watched?'atten_avtive': ''}}" wx:if="{{list[0].userId!=userId}}" data-userId="{{list[0].userId}}" bindtap='handleAttention'>{{list[0].watched?'已关注':'关注'}}</view>
+  </view>
+
+  <view class="flex space center_nav">
+    <view bindtap="goattention">
+      <view>{{myfavCount}}</view>
+      <view class="nav_item light">关注</view>
+    </view>
+    <view bindtap="gomyfans">
+      <view>{{myfansCount}}</view>
+      <view class="nav_item light">粉丝</view>
+    </view>
+    <view>
+      <view>{{myBeUpvote}}</view>
+      <view class="nav_item light">被赞</view>
+    </view>
+  </view>
+  <view class="blank_bar"></view>
+<block wx:for="{{list}}" wx:key="{{index}}">
+    <view class="main_content">
+      <view class="flex aic">
+        <view class="index_header_icon">
+          <image src="{{item.headPic}}" style="width:100%;height:100%;border-radius:50%;"></image>
+          <!-- <image src="/images/v_icon.png" class="v_icon"></image> -->
+        </view>
+        <view class="cell_cn"  data-id="{{item.userId}}" bindtap="goHomePage">
+          <view class="index_header_name">{{item.userName}}</view>
+          <view class="col74"><text style="margin-right:20rpx;">{{item.location}}</text>
+          <!-- <text>{{item.preTime}}</text> -->
+          </view>
+        </view>
+      </view>
+
+      <scroll-view class="flex index_con_img {{item.content.length==1?'onepic':''}}" scroll-x="true" wx:if="{{item.channel == 'pic'}}">
+      <block wx:for="{{item.content}}" wx:for-item="vitem" wx:for-index="vindex" wx:key="{{vindex}}">
+        <image src="{{vitem}}" data-currentimg="{{vitem}}"  data-images="{{item.content}}" bindtap="previewPic" mode="aspectFill"></image>
+        </block>
+      </scroll-view>
+
+      <view class="index_con_arc"  wx:if="{{item.channel == 'article'}}"  data-type="{{item.channel}}" data-id="{{item.id}}" bindtap="goDetailPage">
+        <image src="{{item.picUrl}}"  mode="aspectFill"></image>
+        <view class="arc_tit flex aic">
+          <view>{{item.title}}</view>
+        </view>
+        <view class="arc_type medium">文章</view>
+      </view>
+
+      <view class="comment_con">
+        <view class="comment_tit light" wx:if="{{item.channel == 'pic'}}">{{item.title}}</view>
+
+        <view class="flex aic comment_zan">
+          <view class="cell_cn flex aic">
+            <view bindtap='handleUpvotes' data-index="{{index}}" data-user-id="{{item.userId}}" data-id="{{item.id}}" class="zan_icon">
+              <image src="/images/zan.png"  wx:if="{{!item.up}}" style="width:100%;height:100%;border-radius:50%;"></image>
+              <image src="/images/zan_active.png" wx:if="{{item.up}}" style="width:100%;height:100%;border-radius:50%;"></image>
+            </view>
+            <block wx:for="{{item.upvotes}}" wx:for-item="zitem" wx:for-index="zindex" wx:key="{{zindex}}">
+            <view class="zan_icon" data-id="{{zitem.userId}}" bindtap="goHomePage" wx:if="{{zindex<5}}">
+              <image src="{{zitem.headPic}}" style="width:100%;height:100%;border-radius:50%;"></image>
+              <!-- <image src="/images/v_icon.png" class="v_icon"></image> -->
+            </view>
+            </block>
+            <text class="comment_account" wx:if="{{item.upvotes.length>5&&item.upvotes.length<99}}" data-upvotes="{{item.upvotes}}"  data-name="{{item.userName}}" bindtap="goZanList">{{item.upvotes.length}}</text>
+            <text class="comment_account" wx:if="{{item.upvotes.length>99}}" data-upvotes="{{item.upvotes}}"  data-name="{{item.userName}}" bindtap="goZanList">99+</text>
+          </view>
+          <button class="share_btn" open-type="share" hover-class='none' data-items="{{item}}" data-index="{{index}}">
+          <image src="/images/arc_share.png" class="more_icon"></image>
+          </button>
+        </view>
+
+        <view class="comment_txt light">
+          <view class="comment_total" wx:if="{{item.commentcount>0}}" data-type="{{item.channel}}"  data-id="{{item.id}}" bindtap="goDetailPage">所有{{item.commentcount}}条评论</view>
+          <block wx:for="{{item.commentVoList}}" wx:for-item="citem" wx:for-index="cindex" wx:key="{{cindex}}">
+            <view wx:if="{{cindex==0||cindex==1}}">
+            <text class="comment_user regular"  data-id="{{citem.userId}}" bindtap="goHomePage">{{citem.userInfo.nickName}}</text>
+            <block wx:if="{{citem.atuserId!=0}}">回复 <text class="comment_user regular"  data-id="{{citem.atuserId}}" bindtap="goHomePage">{{citem.atuserInfo.nickName}}</text></block>：{{citem.content}}</view>
+          </block>
+        </view>
+
+        <view class="comment_int" bindtap='handleComment' data-index="{{index}}" data-user-id="{{item.userId}}" data-id="{{item.id}}" >
+          <view style="color:#b4b4b4;">说点什么</view>
+          <!-- <input placeholder="说点什么"/> -->
+        </view>
+      </view>
+    </view> 
+  </block>
+</view>
+<!-- 调用评论组件 -->
+<comment id="comment" focus="{{commentfocus}}" bind:success="_success"/>

@@ -1,0 +1,56 @@
+<view class="container">
+  <view class="market">
+    <view>
+        <navigator hover-class="none" url="../../search/search?type=2" class="cell_cn"><view class="search_bar flex aic">
+          <image src="/images/search_icon.png" class="search_icon"></image>
+          <view style="color:#b4b4b4;">搜索你喜欢的商品</view>
+        </view></navigator>
+    </view>
+    <!-- 筛选条件父列表 -->
+    <view class="market_filter">
+      <view class="market_filter_tap {{market_tap==1?'filtercurrent':''}}" wx:key="{{index}}" bindtap="filterTap" data-market_tap="1">综合</view>
+      <view class="market_filter_tap {{market_tap==2?'filtercurrent':''}}" wx:key="{{index}}" bindtap="filterTap" data-market_tap="2">价格</view>
+      <view class="market_filter_tap {{market_tap==3?'filtercurrent':''}}" wx:key="{{index}}" bindtap="filterTap" data-market_tap="3">品类</view>
+    </view>
+    <!-- 筛选条件子列表 -->
+    <view class="market_filter_childs">
+      <view wx:if="{{market_tap==1}}" wx:key="{{index}}">
+        <view class="market_filter_child {{market_chilid_tap==1?'filterchildcurrent':''}}" data-market_chilid_tap="1" bindtap="filterChildTap">综合</view>
+        <view class="market_filter_child {{market_chilid_tap==2?'filterchildcurrent':''}}" data-market_chilid_tap="2" bindtap="filterChildTap">最新发布</view>
+        <view class="market_filter_child {{market_chilid_tap==3?'filterchildcurrent':''}}" data-market_chilid_tap="3" bindtap="filterChildTap">销量</view>
+      </view>
+      <view wx:if="{{market_tap==2}}" wx:key="{{index}}">
+        <view class="market_filter_child">价格区间</view>
+        <view class="market_filter_child">
+          <input placeholder="最低价" type="number" bindinput="bindKeyInput1"/>
+        </view>
+        <view class="market_filter_child">
+          <input placeholder="最高价" type="number" bindinput="bindKeyInput2"  focus="{{focus}}" />
+        </view>
+      </view>
+      <view wx:if="{{market_tap==3}}" wx:key="{{index}}">
+        <view class="market_filter_child" wx:for="{{itemLists}}" wx:for-index="index" >
+          {{item.name}}
+        </view>
+      </view>
+    </view>
+    <!-- 产品列表 -->
+    <view class="market_products">
+      <!-- <navigator hover-class="none" url="../../productDetail/productDetail?id={{item.id}}"  -->
+      <navigator hover-class="none" url="../goods/goods?id={{item.id}}" class="market_filter_product" wx:for="{{itemLists}}" wx:for-index="index">
+        <image class="market_product_img" src="http://images.huaxi0.com/imgs/MyUpload/house/E/B/8FD3EF709CA24B73ABB08E8C029271F2.jpeg"></image>
+        <view class="product_item_Text">
+          <view class="product_item_Title">给doku的邮件，发到17号的核实完毕消除完了，这个用户是19号还款的</view>
+          <view class="product_item_Num">销量：121</view>
+          <view class="product_item_Price">
+            220元
+          </view>      
+        </view>
+       
+      </navigator>
+    </view>
+  </view>
+  <!-- <view class="blank_bar"></view> -->
+
+
+</view>

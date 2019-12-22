@@ -1,0 +1,14 @@
+<!--component/product/product.wxml-->
+<view class="product_contain">
+  
+  <view class="product_Item_img">
+    <image class="product_Item_Pic" src="/images/home_icon02.png" data-image="/images/home_icon02.png" bindtap="previewPic"></image>
+  </view> 
+  <view class="product_item_Text">
+    <view class="product_item_Title">给doku的邮件，发到17号的核实完毕消除完了，这个用户是19号还款的</view>
+    <view class="product_item_Price">
+      220元{{paramAtoB.name}}
+    </view>      
+  </view>
+</view>
+

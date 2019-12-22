@@ -1,0 +1,58 @@
+<view class="orders">
+  <view class="text_area flex aic light" wx:if="{{checkedAddress.id > 0}}" bindtap="selectAddress" >
+    <view class="cell_cn">
+      <view>收件人：<text class="addr_user_name">{{checkedAddress.name}}</text>{{checkedAddress.mobile}}</view>
+      <view class="order_addr">收货地址：{{checkedAddress.address}}</view>
+    </view>
+    <view class=""><i class="iconfont icon-go"></i></view>
+  </view>
+  <view class="text_area empty_area light" bindtap="addAddress"  wx:else>
+    +新建收货地址
+  </view>
+
+  <view class="order_tit_tips light">订单详情</view>
+
+  <block wx:for="{{checkedGoodsList}}" wx:key="{{index}}">
+    <view class="cell">
+      <view><image src="{{item.picUrl}}" class="big_img"></image></view>
+      <view class="cell_cn">
+        <view class="flex aic">
+          <text class="cart_type">{{item.tagId}}</text>
+          <view class="order_tit">{{item.goodsName}}</view>
+        </view>
+        <view class="active order_price">￥{{item.price}}元</view>
+        <view class="order_type">{{item.specifications}}</view>
+      </view>
+      <text class="num_color">×{{item.number}}</text>
+    </view>
+  </block>
+
+  <view class="cell">
+    <view class="cell_cn">
+      <text>总重量</text>
+    </view>
+    <view class="cell_ft light">约{{totalWeight}}KG（已含包装重量）</view>
+  </view>
+  <view class="cell">
+    <view class="cell_cn">
+      <text>总运费</text>
+    </view>
+    <view class="cell_ft light">￥{{freightPrice}}元（默认申通快递）</view>
+  </view>
+  <view class="cell">
+    <view class="cell_cn">
+      <text>商品总价</text>
+    </view>
+    <view class="cell_ft">￥{{goodsTotalPrice}}元</view>
+  </view>
+
+  <view>
+    <textarea class="text_area" auto-height placeholder-class="text_plac light" placeholder="留言" cursor-spacing="50" bindinput="handleInput"/>
+  </view>
+
+  <view class="flex aic cart_bot">
+    <view class=" cell_cn"><text>实收金额：</text><text class="active ST_light">￥{{goodsTotalPrice}}元+￥{{freightPrice}}元</text></view>
+    <view class="cart_btn" bindtap='submitOrder'>去结算</view>
+  </view>
+
+</view>

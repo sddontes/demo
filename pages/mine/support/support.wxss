@@ -1,0 +1,19 @@
+.container{
+  padding-top: 20rpx;
+}
+.cell{
+  color: #747474;
+  padding: 22rpx 40rpx;
+  align-items: flex-start;
+}
+.att_name{
+  color: #222;
+}
+.att_time{ 
+  font-size: 20rpx;
+  margin-top: 22rpx;
+}
+.support_icon{
+  width: 80rpx;
+  height: 80rpx;
+}

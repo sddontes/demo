@@ -1,0 +1,17 @@
+.report_icon{
+  width: 36rpx;
+  height: 28rpx;
+}
+.report_txt{
+  padding:48rpx 40rpx 24rpx;
+}
+.text_area{
+  width: 92%;
+  height: 240rpx;
+  background: #fafafa;
+  padding: 30rpx;
+}
+.btn{
+  width: auto;
+  margin: 40rpx 56rpx;
+}

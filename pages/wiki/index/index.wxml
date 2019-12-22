@@ -1,0 +1,10 @@
+<view class="container">
+  <block  wx:for="{{wikiList}}" wx:key="{{index}}">
+    <navigator url="../wikilist/wikilist?id={{item.dicItemValue}}&title={{item.dicItemName}}" hover-class="none">
+      <view class="wiki_item">
+        <image src="{{item.remark}}" class="wiki_img"></image>
+        <view class="wiki_tit medium">{{item.dicItemName}}</view>
+      </view>
+    </navigator>
+  </block>
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "收到的评论",
+  "usingComponents": {
+    "comment": "/component/comment/comment"
+  }
+}

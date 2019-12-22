@@ -1,0 +1,27 @@
+@import "/style/page.wxss";
+page{
+  padding-bottom: 60rpx;
+}
+.comment_int{
+  background: #fff;
+  border-radius: 0;
+  border-bottom: 2rpx solid #f1f1f1;
+}
+.zan_icon{
+  width: 48rpx;
+  height: 48rpx;
+}
+.zan_icon:first-child{
+  margin-right: 28rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.comment_account{
+  width: 48rpx;
+  line-height: 48rpx;
+  font-size: 20rpx;
+}
+.index_header_icon{
+  width: 48rpx;
+  height: 48rpx;
+}

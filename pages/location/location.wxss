@@ -1,0 +1,50 @@
+/* pages/place/place.wxss */
+.a-z{
+  width: 35rpx;
+  position: fixed;
+  top: 200rpx;
+  text-align: center;
+  right: 5rpx;
+  color: #3399cc;
+  font-size: 24rpx;
+}
+.city-item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #FFFFFF;
+  overflow: hidden;
+}
+.city-item.cell{
+  margin: 0 40rpx 0 0;
+  padding: 24rpx 40rpx;
+}
+.city-item.cell::before{
+  right: 40rpx; 
+}
+
+.city-item-A-Z{
+  width: 100%;
+  line-height: 50rpx;
+  padding-left: 40rpx;
+  margin-top: -1rpx;
+  /* color:; */
+  background:#f7f7f7;
+
+}
+
+.list-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.fixed-title {
+  height:60rpx;
+  line-height:60rpx;
+  padding-left:40rpx;
+  /* font-size:12px; */
+  /* color:rgba(255, 255, 255, 1); */
+  background:#f7f7f7;
+}

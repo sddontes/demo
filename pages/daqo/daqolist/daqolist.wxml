@@ -1,0 +1,13 @@
+<view>
+  <block wx:for="{{list}}" wx:key="{{index}}">
+    <view class="item {{item.show?'on':''}}">
+      <view class="cell title">
+        <view class="cell_cn" bindtap="getdaqokey" data-daqo-id="{{item.id}}" data-type="{{index == 1?'2':'0'}}"  data-name="{{item.name}}" data-parent-id="{{item.id}}">{{item.name}} ({{item.count}})</view>
+        <view class="daqo_right" data-index="{{index}}" data-show="{{item.show}}" bindtap="toggleShow" wx:if="{{index!=0&&index!=1}}"><i class="iconfont icon-down"></i></view>
+      </view>
+      <block  wx:for="{{item.subItem}}" wx:for-item="vitem" wx:for-index="vindex" wx:key="{{vindex}}">
+        <view class="cell content" bindtap="getdaqokey" data-daqo-id="{{vitem.id}}"  data-type="1" data-name="{{vitem.name}}" data-parent-id="{{vitem.parentId}}">{{vitem.name}} ({{vitem.count}})</view>
+      </block>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,85 @@
+@import "/style/goods.wxss";
+@import "/style/page.wxss";
+page{
+  /* height:100%; */
+  background: #000;
+  color: #fff;
+  /* overflow: hidden; */
+}
+.daqo_icon{
+  width: 100%;
+  height: 562rpx;
+  /* margin-top: 220rpx; */
+}
+
+.daqo_tit{
+  font-size: 38rpx;
+  margin-bottom: 6rpx;
+  margin-top: 70rpx;
+}
+.daqo_bot{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0rpx;
+  background: #000;
+  padding-bottom: 20rpx;
+  padding-left: 257rpx;
+  z-index: 3;
+}
+.share_white_icon{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 68rpx;
+}
+.daqo_btn{
+  width: 188rpx;
+  line-height: 82rpx;
+  color: #ff5e5e;
+  border: 1rpx solid rgba(255,255,255,0.27);
+  border-radius: 200rpx;
+  text-align: center;
+  margin-left: 144rpx;
+}
+
+.share_box{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 999999rpx;
+}
+button.share_btn{
+  background: #000;
+}
+
+.daqo_detail_con{
+  left: 0;
+  right: 0;
+  padding: 0 40rpx 40rpx;
+  position: fixed;
+  /* top: -30rpx; */
+  /* bottom: 120rpx; */
+  background: rgba(0,0,0,0.5);
+}
+.daqo_detail{
+  margin: 44rpx 0;
+  line-height: 42rpx;
+}
+.about_arc{
+  margin-top: 24rpx;
+  color: #4990E2;
+}
+.zan_list{
+  margin: 44rpx 0 60rpx;
+}
+.about_googds{
+  margin-top: 80rpx;
+}
+.goods_lsit{
+  flex-wrap: wrap;
+  margin-top: 24rpx;
+}
+
+.zan_icon{
+  background: #000;
+}

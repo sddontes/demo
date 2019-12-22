@@ -1,0 +1,12 @@
+<view class="light">
+  <block wx:for="{{reportlist}}" wx:key="{{index}}">
+    <view class="cell" bindtap="handleTap" data-index="{{index}}" data-reason="{{item.text}}">
+      <view class="cell_cn">{{item.text}}</view>
+      <view wx:if="{{activeIndex === index+1}}"><image src="/images/report_icon.png" class="report_icon"></image></view>
+    </view>
+  </block>
+  <view class="report_txt col74">其他原因，请具体说明</view>
+  <textarea class="text_area"  bindinput="handleInput"/>
+
+  <view class="btn" bindtap='submit'>提交</view>
+</view>

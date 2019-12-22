@@ -1,0 +1,82 @@
+page{
+  background: #f9f9f9;
+  font-size: 28rpx;
+  padding-top: 20rpx;
+}
+input{
+  width: 100%;
+  font-family: PingFangSC-Light;
+}
+.cell::before{
+  left: 0;
+}
+.place_holder{
+  color: #848484;
+  font-weight: 300;
+}
+.mar18{
+  margin-bottom: 18rpx;
+}
+.mar18.cell:before,.hei100.cell:before{
+  border: none;
+}
+.hei100{
+  height: 220rpx;
+  align-items: flex-start;
+}
+
+/* 选择地址栏 */
+
+.region-select .hd{
+  border-bottom: 1px solid #f4f4f4;
+  padding: 30rpx 40rpx;
+  color: #333;
+  font-size: 28rpx;
+}
+.region-select .region-selected .item{
+  max-width: 180rpx;
+  margin-right: 20rpx;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.region-select .region-selected .item.disabled{
+  color: #999;
+}
+.region-select .region-selected .item.selected{
+  color: #ff5e5e;
+}
+.region-select .done{
+  color: #ff5e5e;
+}
+.region-select .done.disabled{
+  color: #999;
+}
+.region-select .bd{
+  height: 492rpx;
+  width: 100%;
+  padding: 10rpx 40rpx;
+}
+
+.region-select .region-list{
+  height: 492rpx;
+}
+
+.region-select .region-list .item{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: left;
+  color: #333;
+  font-size: 28rpx;
+}
+
+.region-select .region-list .item.selected{
+  color: #ff5e5e;
+}
+
+
+.cart_btn.dis{
+  color: #000;
+}

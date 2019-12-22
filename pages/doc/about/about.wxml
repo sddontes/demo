@@ -1,0 +1,20 @@
+<view class="light">
+  <image src="/images/about_bg.png" class="about_icon"></image>
+  <view class="versions">版本号：V1.1.0</view>
+
+    <view class="about_view">
+      <navigator hover-class="none" url="../standard/standard"><view class="cell">
+        <view class="cell_cn">社区规范</view>
+        <view class="cell_ft"><i class="iconfont icon-go"></i></view>
+      </view></navigator>
+      <navigator hover-class="none" url="../privacy/privacy"><view class="cell">
+        <view class="cell_cn">隐私政策</view>
+        <view class="cell_ft"><i class="iconfont icon-go"></i></view>
+      </view></navigator>
+    </view>
+
+    <view class="about_info">
+      <view>北京花之物语科技有限公司</view>
+      <view class="about_tips">为了能及时给予您帮助请添加微信：2411979554</view>
+    </view>
+</view>

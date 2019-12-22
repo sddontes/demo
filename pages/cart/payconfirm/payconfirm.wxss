@@ -1,0 +1,24 @@
+page{
+  background: #f9f9f9;
+  font-size: 28rpx;
+}
+.pay_con{
+  background: #FEE4D6;
+  line-height: 76rpx;
+  font-size: 24rpx;
+  color: #ff5e5e;
+  padding-left: 68rpx; 
+}
+.sel_check{
+  width: 40rpx;
+  height: 40rpx;
+  display: block;
+}
+.cell::before{
+  border: none;
+}
+.pay_way{
+  font-size: 24rpx;
+  color: #848484;
+  margin-top: 6rpx;
+}

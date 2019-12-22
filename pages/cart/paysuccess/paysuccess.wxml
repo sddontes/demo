@@ -1,0 +1,6 @@
+<view>
+  <view class="pay_tit">您已支付成功！</view>
+  <view>请您耐心等待，发货后快递订单号码会</view>
+  <view>以消息提醒的方式发送给您。</view>
+  <view>如果问题请加客服微信：2144979554</view>
+</view>

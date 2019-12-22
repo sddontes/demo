@@ -1,0 +1,19 @@
+<!--pages/mine/message/message.wxml-->
+<view class="light">
+  <navigator hover-class="none" url="../attmessage/attmessage"><view class="cell">
+    <view class="cell_cn">通知消息<i class="new_dot"></i></view>
+    <view class="cell_ft"><i class="iconfont icon-go"></i></view>
+  </view></navigator>
+  <navigator hover-class="none" url="../comments/comments"><view class="cell">
+    <view class="cell_cn">收到的评论<i class="new_dot"></i></view>
+    <view class="cell_ft"><i class="iconfont icon-go"></i></view>
+  </view></navigator>
+  <navigator hover-class="none" url="../support/support"><view class="cell">
+    <view class="cell_cn">收到的赞</view>
+    <view class="cell_ft"><i class="iconfont icon-go"></i></view>
+  </view></navigator>
+  <navigator hover-class="none" url="../attention/attention"><view class="cell">
+    <view class="cell_cn">新增关注</view>
+    <view class="cell_ft"><i class="iconfont icon-go"></i></view>
+  </view></navigator>
+</view>

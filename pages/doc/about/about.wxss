@@ -1,0 +1,25 @@
+.about_icon{
+  display: block;
+  width: 124rpx;
+  height: 258rpx;
+  margin: 80rpx auto 6rpx;
+}
+.versions{
+  text-align: center;
+}
+.about_view{
+  color: #3b3b3b;
+  margin-top: 68rpx;
+}
+.about_info{
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 44rpx;
+
+}
+.about_tips{
+  font-size: 22rpx;
+  color: #373737;
+  margin-top: 20rpx;
+}

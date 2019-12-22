@@ -1,0 +1,15 @@
+<view>
+  <view class="pay_con">剩余支付时间：{{format}}</view>
+
+  <view class="flex space aic cell">
+    <view class="cell_cn light">
+      <view>微信支付</view>
+      <view class="pay_way">推荐微信用户使用</view>
+    </view>
+    <view><image src="/images/sel_check.png" class="sel_check"></image></view>
+  </view>
+  <view class="flex aic cart_bot">
+    <view class="cell_cn"><text style="color:#4e4e4e;">实收金额：</text><text class="active ST_light">￥{{actualPrice}}元</text></view>
+    <view class="cart_btn {{disPay?'dis':''}}" bindtap='handlePay'>马上支付</view>
+  </view>
+</view>

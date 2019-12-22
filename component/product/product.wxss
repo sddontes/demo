@@ -1,0 +1,39 @@
+/* component/product/product.wxss */
+.product_contain {
+  display: flex;
+  margin: 20rpx;
+}
+.product_item_Title {
+  height: 80rpx;
+  margin-left: 40rpx;
+  line-height: 40rpx;
+  overflow: hidden;
+  text-align:justify;
+}
+.product_item_Price {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 40rpx;
+  color: black;
+  margin: 10rpx 40rpx 20rpx 40rpx;
+}
+.product_item_purches {
+  width: 200rpx;
+  font-size: 25rpx;
+  float: right;
+}
+.product_Item_img {
+  flex: 1;
+}
+.product_Item_Pic {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 0 auto;
+}
+.product_item_Text {
+  flex:4;
+}
+.order_all {
+  float: right;
+  margin-right: 40rpx;
+}

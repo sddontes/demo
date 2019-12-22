@@ -1,0 +1,25 @@
+<view class="container"> 
+
+  <view class="flex aic flex daqo_header">
+    <navigator hover-class="none" url="../daqolist/daqolist">
+      <view>{{name}}<i class="iconfont icon-down"></i></view>
+    </navigator>
+    <navigator hover-class="none" url="../../search/search?type=3" class="cell_cn">
+      <view class="search_bar cell_cn flex aic">
+        <image src="/images/search_icon.png" class="search_icon"></image>
+        <view style="color:#b4b4b4;">搜索你喜欢的多肉植物</view>
+      </view>
+    </navigator>
+  </view>
+
+  <view class="flex daqo_con">
+    <block  wx:for="{{daqoList}}" wx:key="{{index}}">
+      <navigator url="../daqodetail/daqodetail?id={{item.id}}&title={{item.title}}" hover-class="none" class="daqo_item">
+        <view class="">
+          <image src="{{item.thumbnail}}" class="daqo_img"></image>
+          <view class="daqo_text">{{item.title}}</view>
+        </view>
+      </navigator>
+    </block> 
+  </view>
+</view>

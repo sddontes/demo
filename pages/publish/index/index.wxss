@@ -1,0 +1,57 @@
+.container{
+  padding: 30rpx 60rpx 0;
+}
+.pub_area{
+  font-size: 48rpx;
+  margin-bottom: 30rpx;
+}
+.pub_weather{
+  font-size: 32rpx;
+  margin-bottom: 8rpx;
+}
+.publish_icon{
+  width: 128rpx;
+  height: 128rpx;
+  position: relative;
+  margin-bottom: 20rpx;
+  margin-left: 60rpx;
+}
+.v_icon{
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  bottom: -8rpx;
+  right: 0;
+}
+.colb1{
+  color: #b1b1b1;
+}
+.pub_tips{
+  color: #3b3b3b;
+  margin: 256rpx auto 90rpx;
+  text-align: center;
+}
+.btn{
+  background: #f9f9f9;
+  border-radius: 0;
+  color: #1C1B21;
+  line-height: 96rpx;
+  /* margin-bottom: 40rpx; */
+}
+.pub_con{
+  padding:0 58rpx 0 36rpx;
+  text-align: center;
+  align-items: flex-start;
+}
+.pub_operate{
+  width: 156rpx;
+  height: 156rpx;
+  border-radius: 50%;
+  display: block;
+  margin:0 auto 48rpx;
+}
+.cola9{
+  font-size: 24rpx;
+  color: #a9a9a9;
+  margin-top: 6rpx;
+}

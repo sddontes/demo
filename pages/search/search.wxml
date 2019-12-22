@@ -1,0 +1,62 @@
+<view>
+  <view class="fixtop">
+    <view class="search_bar flex aic">
+        <image src="/images/search_icon.png" class="search_icon" wx:if="{{showSearchIcon}}"></image>
+        <input class="cell_cn" placeholder="搜索你喜欢的多肉植物，商品，文章" confirm-type="search" bindconfirm="searchConfirm" focus="true" bindfocus="handleFocus" bindblur="handleBlur" bindinput="handleInput"  value="{{searchInput}}"/>
+        <view class="search_close" wx:if="{{showDelIcon}}" bindtap="clearKeyword">x</view>
+    </view>
+
+    <view class="search_nav flex space">
+      <block wx:for="{{navlist}}" wx:key="{{index}}">
+        <text class="{{activeIndex==index+1?'search_active':''}}" bindtap="navTap" data-index="{{index+1}}">{{item}}</text>
+      </block>
+    </view>
+    <view class="blank_bar"></view>
+  </view>
+
+  <view wx-if="{{activeIndex == 1}}" class="msgcon">
+    <block wx:for="{{msgList}}" wx:key="{{index}}" > 
+    <navigator url="../wiki/wikidetail/wikidetail?id={{item.id}}&title={{item.title}}" hover-class="none">
+        <view class='arc_item flex light'>
+            <view class="cell_cn">      
+              <text>{{item.title}}</text>
+              <view class="arc_num">
+                <text>{{item.source}}</text>
+                <text>{{item.readCount}}阅读</text>
+                <text>{{item.commentcount}}评论</text>
+              </view>
+            </view>
+            <image class='arc_icon' src="{{item.picUrl}}" ></image>
+        </view> 
+      </navigator>      
+    </block>
+  </view>
+
+  <view wx-if="{{activeIndex == 2}}" class="goods_con flex space">
+    <block wx:for="{{goodsList}}" wx:key="{{index}}" > 
+    <navigator url="../market/goods/goods?id={{item.id}}" hover-class="none" class="goods_item">
+      <view>
+        <view class="goods_bg ST_light" wx:if="{{!item.isOnSale}}">已售罄</view>
+        <image src="{{item.picUrl}}" class="goods_img"></image>
+        <view>{{item.name}}</view>
+        <view class="col74">{{item.brief}}</view>
+        <view class="flex aic">
+          <text class="cart_type">{{item.tagId}}</text>
+          <text class="goods_price">￥{{item.retailPrice}}元</text>
+        </view>
+      </view>
+      </navigator>
+    </block> 
+  </view>
+
+  <view wx-if="{{activeIndex == 3}}" class="flex daqo_con">
+    <block  wx:for="{{daqoList}}" wx:key="{{index}}">
+    <navigator url="../daqo/daqodetail/daqodetail?id={{item.id}}" hover-class="none" class="daqo_item">
+      <view class="">
+        <image src="{{item.thumbnail}}" class="daqo_img"></image>
+        <view class="daqo_text">{{item.title}}</view>
+      </view>
+      </navigator>
+    </block> 
+  </view>
+</view>

@@ -1,0 +1,11 @@
+<view class="container">
+<block wx:for="{{list}}" wx:key="{{index}}">
+  <view class="cell" data-id="{{item.userId}}" bindtap="goHomePage">
+    <view class="user_icon">
+      <image src="{{item.headPic}}" class="att_user"></image>
+    </view>
+    <view class="cell_cn light">{{item.userName}}</view>
+    <view class="cell_ft"><i class="iconfont icon-go"></i></view>
+  </view>
+  </block>
+</view>

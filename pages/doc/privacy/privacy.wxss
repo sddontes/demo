@@ -1,0 +1,12 @@
+/* pages/doc/privacy/privacy.wxss */
+.doc_views{
+  font-family: PingFangSC-Light;
+  padding: 0 52rpx 100rpx;
+  font-size: 28rpx;
+  color: #1C1B21;
+  line-height: 48rpx;
+}
+.doc_tit{
+  font-family: PingFangSC-Regular;
+  margin-top: 60rpx;
+}

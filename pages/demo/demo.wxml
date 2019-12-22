@@ -1,0 +1,93 @@
+<!--pages/cart/index/index.wxml-->
+<view  wx:if="{{cartGoods.length<=0}}" class="empty_cart">
+  <image src="/images/cart_empty.png" class="cart_empty_bg"></image>
+  <view>亲，购物车空空如也，赶紧去领养一颗多肉吧</view>
+  <view class="empty_btn" bindtap='goMarket'>去逛逛</view>
+</view>
+
+<view class="orders" wx:if="{{cartGoods.length>0}}">
+  <block wx:for="{{cartGoods}}" wx:key="{{index}}">
+    <view class="cell cart_item">
+      <view>
+        <i class="iconfont icon-check sel_check {{item.checked ? 'checked' : ''}}" bindtap="checkedItem" data-item-index="{{index}}"></i>
+      </view>
+      <view class="cart_img">
+        <image src="{{item.picUrl}}" class="big_img"></image>
+        <view class="cart_empty light" wx:if="{{item.maxCount == 0}}">已售罄</view>
+      </view>
+      <view class="cell_cn">
+        <view class="flex aic">
+          <text class="cart_type">{{item.tagId}}</text>
+          <view class="order_tit">{{item.goodsName}}</view>
+        </view>
+        <view class="active order_price ST_light">￥{{item.price}}元</view>
+        <view class="flex aic space">
+          <view class="flex">
+            <!-- 减号 -->
+            <view class="minus_btn" bindtap="cutNumber" data-item-index="{{index}}">-</view>
+            <!-- 数值 -->
+            <input type="number" class="in_btn" data-item-index="{{index}}" value="{{item.number}}" cursor-spacing="20" bindinput="handleInput" bindblur="handleBlur"/>
+            <!-- 加号 -->
+            <view class="plus_btn" bindtap="addNumber" data-item-index="{{index}}">+</view>
+          </view>
+          <image src="/images/del_icon.png" class="del_icon" bindtap="deleteCart"  data-item-id="{{item.productId}}"></image>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <view class="flex aic cart_bot" wx:if="{{cartGoods.length >0}}">
+    <i class="iconfont icon-check sel_check {{checkedAllStatus ? 'checked' : ''}}" bindtap="checkedAll"></i>
+    <text class="check_all">全选</text>
+    <view class=" cell_cn"><text>合计：</text><text class="active ST_light">￥{{cartTotal.checkedGoodsAmount}}元</text></view>
+    <view class="cart_btn {{disCheck?'dis':''}}" bindtap="checkoutOrder">确认</view>
+  </view>
+</view>
+
+<!-- 调用modal组件 -->
+<popup id="popup" content="确定移除商品吗？" btn_no="取消" btn_ok="确定" bind:error="_error" bind:success="_success"/>
+
+
+
+
+
+<!-- 弹框 -->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<!-- 商品详情弹框 -->
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus&&showDetail}}">
+  <view class="pop_item">
+    <image src="/images/close.png" class="close_icon" bindtap='hideModal'></image>
+    <view class="cell aic">
+      <view class="cart_img">
+        <image src="{{info.picUrl}}" class="big_img"></image>
+        <view class="cart_empty ST_light" wx:if="{{!info.isOnSale}}">已售罄</view>
+      </view>
+      <view class="">
+        <view class="cart_type">{{info.tagId}}</view>
+        <view class="order_tit ST_light">库存{{selectNumber}}件</view>
+        <view class="active order_price ST_light">￥{{checkedSpecPrice}}元</view>
+      </view>
+    </view>
+    <block wx:for="{{specificationList}}" wx:key="{{index}}">
+      <view class="cell light">
+        <view class="col55">{{item.name}}</view>
+        <block wx:for="{{item.valueList}}"  wx:for-item="vitem" wx:key="{{vitem.id}}">
+          <view data-id="{{vitem.id}}" data-index="{{index}}" data-name="{{vitem.value}}" bindtap='selectSpec' class="spec_item {{activeIndex === index?'selected': ''}}">{{vitem.value}}</view>
+        </block>
+      </view>
+    </block>
+
+    <view class="cell">
+      <view class="col55 cell_cn">购买数量</view>
+      <view class="flex">
+        <!-- 减号 -->
+        <view class="minus_btn" bindtap="cutNumber">-</view>
+        <!-- 数值 -->
+        <input type="number" class="in_btn" value="{{number}}" cursor-spacing="20" bindinput="handleInput"/>
+        <!-- 加号 -->
+        <view class="plus_btn" bindtap="addNumber">+</view>
+      </view>
+    </view>
+  </view>
+  <view class="btn" bindtap="addCart">确认</view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我的花房",
+  "usingComponents": {
+    "comment": "/component/comment/comment"
+  }
+}

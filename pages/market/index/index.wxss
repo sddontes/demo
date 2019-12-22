@@ -1,0 +1,163 @@
+@import "/style/goods.wxss";
+.container{
+  padding-top: 20rpx;
+}
+.market{
+  padding: 0 40rpx;
+  flex-wrap: wrap;
+}
+.search_icon{
+  margin-left: 206rpx;
+}
+.market_nav{
+  padding: 36rpx 30rpx 56rpx;
+  font-size: 24rpx;
+}
+.market_icon{
+  display: block;
+  width: 72rpx;
+  height: 72rpx;
+  margin: 0 auto 34rpx;
+}
+.swiper_box {
+    width: 100%;
+    height: 192rpx; 
+    border-radius: 6rpx; 
+    margin-bottom: 66rpx;
+}
+.banner_img{
+  display: block;
+  width: 100%;
+  height: 192rpx;
+}
+.blank_bar{
+  height: 8rpx;
+  background: #f5f5f5;
+}
+.market_tit{
+  text-align: center;
+  padding: 50rpx 0 60rpx;
+  font-size: 36rpx;
+  color: #282828;
+}
+.market_date{
+  font-size: 24rpx;
+  color: #a2a2a2;
+}
+.market_more{
+  color: #282828;
+  text-align: center;
+  margin: 34rpx 0 40rpx;
+}
+
+
+.swiper_box .wx-swiper-dots.wx-swiper-dots-horizontal{
+    margin-bottom: 2rpx;
+    margin-left: 260rpx;
+}
+.swiper_box .wx-swiper-dot{
+    width:8rpx;
+    display: inline-flex;
+    height: 8rpx; 
+    align-items: center;
+    background: #fff;
+}
+.swiper_box .wx-swiper-dot::before{
+    content: '';
+    flex-grow: 1;  
+    background: rgba(255,255,255,1);
+    border-radius: 8rpx
+}
+.swiper_box .wx-swiper-dot-active{
+  width: 12rpx;
+  height: 12rpx;
+}
+.swiper-box .wx-swiper-dot-active::before{
+    background:rgba(255,255,255,1);    
+}
+
+/* 筛选条件导航栏 */
+.market_filter {
+  width: 100%;
+  height: 130rpx;
+  overflow: hidden;
+}
+.market_filter_tap {
+  text-align: center;
+  width: 120rpx;
+  margin: 40rpx 20rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  float: left;
+  border-bottom: 1rpx solid gray;
+}
+.filtercurrent {
+  background-color: rgb(39, 134, 39);
+  color: white;
+}
+.market_filter_childs {
+  width:100%;
+  overflow: hidden;
+}
+.market_filter_child {
+  text-align: center;
+  width: 120rpx;
+  margin: 10rpx 20rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  float: left;
+  /* border-bottom: 1rpx solid gray; */
+
+}
+.filterchildcurrent {
+  background-color: green;
+}
+/** 修改默认的navigator点击态 **/
+.navigator-hover {
+  color: blue;
+}
+/** 自定义其他点击态样式类 **/
+.other-navigator-hover {
+  color: red;
+}
+/* 产品 */
+.market_products {
+  margin: 10rpx auto;
+  overflow: hidden;
+}
+.market_filter_product {
+  width: 49%;
+  /* height: 160rpx; */
+  float:left;
+  overflow: hidden;
+}
+.market_product_img {
+  background-color: blue;
+  display: block;
+  width: 300rpx;
+  height: 250rpx;
+  margin: 20rpx auto;
+}
+.product_item_Title {
+  height: 80rpx;
+  margin: 10rpx;
+  line-height: 40rpx;
+  overflow: hidden;
+  text-align:justify;
+}
+.product_item_Price {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color: red;
+  float: right;
+  margin-right: 20rpx;
+}
+.product_item_Num {
+  height: 40rpx;
+  line-height: 40rpx;
+  color: gray;
+  font-size: 20rpx;
+  margin-left: 20rpx;
+  float: left;
+}

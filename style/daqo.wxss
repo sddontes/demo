@@ -1,0 +1,26 @@
+.daqo_con{
+  flex-wrap: wrap;
+  padding: 40rpx 40rpx;
+}
+.daqo_item{
+  position: relative;
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+}
+.daqo_img{
+  display: block;
+  width: 218rpx;
+  height: 218rpx;
+  border-radius: 6rpx;
+  margin-right: 8rpx;
+  margin-bottom: 8rpx;
+}
+.daqo_item:nth-child(3n) .daqo_img{
+  margin-right: 0;
+}
+.daqo_text{
+  position: absolute;
+  width: 100%;
+  bottom: 12rpx;
+}

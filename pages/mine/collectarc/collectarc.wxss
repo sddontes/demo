@@ -1,0 +1,49 @@
+@import "/style/wenzhang.wxss";
+.blank_bar{
+  width: 100%;
+  height: 42rpx;
+  background: #f9f9f9;
+}
+.arc_item {
+  width: 100%;
+  height: 160rpx;
+  position: relative;
+  left:0;
+  top:0;
+  overflow: hidden;
+  margin-top: 60rpx;
+  line-height: 48rpx;
+  padding-left: 0;
+}
+
+.msg {
+  position: absolute;
+  left: 40rpx;
+  right: 0;
+  height: 160rpx;
+  top:0;
+  z-index: 100;
+  background-color: #FFF;
+}
+
+.msg_menu {
+  position: absolute;
+  width: 100%;
+  height: 160rpx;
+  left:0;
+  top:0;
+  z-index: 0;
+}
+.menu_delete {
+  position: absolute;
+  width: 160rpx;
+  height: 160rpx;
+  right: 0;
+  background: #ff5e5e;
+  text-align: center;
+  line-height:180rpx;
+}
+.del_icon{
+  width: 40rpx;
+  height: 40rpx;
+}

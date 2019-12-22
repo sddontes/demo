@@ -1,0 +1,5 @@
+@import "/style/goods.wxss";
+.container{
+  padding: 40rpx;
+  flex-wrap: wrap;
+}

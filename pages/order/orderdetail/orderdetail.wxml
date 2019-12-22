@@ -1,0 +1,65 @@
+<view class="orders">
+  <view class="back_white order_con1">
+    <view>收件人：<text class="order_user_name">{{orderInfo.consignee}}</text>{{orderInfo.mobile}}</view>
+    <view class="order_addr">收货地址：{{orderInfo.address}}</view>
+  </view>
+
+  <view class="back_white order_con2">
+    <block wx:for="{{orderGoods}}" wx:key="{{index}}">
+      <view class="flex aic order_item">
+        <view><image src="{{item.picUrl}}" class="big_img"></image></view>
+        <view class="cell_cn">
+          <view class="order_tit">{{item.goodsName}}</view>
+          <view class="active order_price">￥{{item.price}}元</view>
+          <view class="order_type">{{item.goodsSpecificationValues}}</view>
+        </view>
+        <text class="num_color">×{{item.number}}</text>
+      </view>
+    </block>
+    <view class="cell">
+      <view class="cell_cn flex aic">
+        <text>重量</text><image src="/images/order_quto.png" class="order_quto"></image>
+      </view>
+      <view class="cell_ft light">约{{totalWeight}}KG（已含包装重量）</view>
+    </view>
+    <view class="cell">
+      <view class="cell_cn flex aic">
+        <text>运费</text><image src="/images/order_quto.png" class="order_quto"></image>
+      </view>
+      <view class="cell_ft light">￥{{orderInfo.freightPrice}}元<text>（{{orderInfo.expCode}}）</text></view>
+    </view>
+    <view class="cell">
+      <view class="cell_cn">商品总价</view>
+      <view class="cell_ft light">￥{{orderInfo.goodsPrice}}元</view>
+    </view>
+    <view class="cell">
+      <view class="cell_cn light">实收金额</view>
+      <view class="cell_ft active light">￥{{orderInfo.goodsPrice}}元+￥{{orderInfo.freightPrice}}元</view>
+    </view>
+    <view class="cell">
+      <view class="cell_cn active">{{orderInfo.orderStatusText}}</view>
+      <view class="apply_btn" bindtap="handlePay" wx:if="{{handleOption.pay}}">去支付</view>
+      <view class="apply_btn" bindtap="refundOrder" wx:if="{{handleOption.refund}}" data-type="1">申请退款</view>
+      <view class="apply_btn dis" wx:if="{{!handleOption.refund && !handleOption.pay}}">申请退款</view>
+    </view>
+    <view class="cell">
+      <view class="cell_cn">
+        <view class="light">订单编号：{{orderInfo.orderSn}} </view>
+        <view class="addr_no light"  wx:if="{{handleOption.confirm}}">快递单号：{{orderInfo.expNo}}</view>
+      </view>
+      <view class="apply_btn check_wuliu" wx:if="{{handleOption.confirm}}" bindtap="goCheckWuliu">查看物流</view>
+    </view>
+  </view>
+
+
+  <view class="back_white order_con3 light">
+    留言备注：<text class="order_msg">{{orderInfo.remark}}</text>
+  </view>
+
+  <view class="back_white order_del" bindtap="deleteOrder" wx:if="{{handleOption.delete}}" data-type="2">删除订单</view>
+
+  <view class="order_tips">如有问题，请加客服微信：2411979554</view>
+</view>
+
+<!-- 调用modal组件 -->
+<popup id="popup" content="{{poptxt}}" btn_no="取消" btn_ok="确定" bind:error="_error" bind:success="_success"/>

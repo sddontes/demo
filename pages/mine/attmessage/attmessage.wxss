@@ -1,0 +1,18 @@
+.container{
+  padding: 0 40rpx;
+}
+.att_item{
+  margin-top: 54rpx;
+}
+.att_name{
+  color: #222;
+}
+.att_content{
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin: 20rpx 0;
+}
+.att_time{ 
+  font-size: 20rpx;
+  color: #747474;
+}

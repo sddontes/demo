@@ -1,0 +1,33 @@
+<!-- 分享弹框 -->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class="pop_item flex space">
+    <view bindtap='creatSharePic'>
+      <image src="/images/share01.png" class="pop_icon"></image>
+      <view>朋友圈</view>
+    </view>
+    <button open-type="share" hover-class='none'>
+      <image src="/images/share02.png" class="pop_icon"></image>
+      <view>微信好友</view>
+    </button>
+      <view>
+      <image src="/images/share01.png" class="pop_icon"></image>
+      <view>删除</view>
+    </view>
+      <view bindtap='handleReport'>
+      <image src="/images/share01.png" class="pop_icon"></image>
+      <view>举报</view>
+    </view>
+  </view>
+  <view class="pop_cancel" bindtap="hideModal">取消</view>
+</view>
+
+<view class="canvas-box">
+  <canvas canvas-id="myCanvas" style="width:375px;height:557px;"></canvas>
+</view>
+
+
+<view hidden='{{hidden}}'>    
+  <image src='{{canImgurl}}'></image>
+  <!-- <button  bindtap='save'>保存图片到相册</button> -->
+</view>

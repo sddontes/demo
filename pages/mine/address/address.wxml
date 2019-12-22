@@ -1,0 +1,21 @@
+<view>
+  <block wx:for="{{addList}}" wx:key="{{index}}">
+    <view class="back_white addr_item flex aic">
+      <view bindtap="addressAddOrUpdate" data-address-id="{{item.id}}"  class="flex aic cell_cn">
+        <image src="/images/sel_check.png" class="sel_check" wx:if="{{item.isDefault}}"></image>
+        <image src="/images/sel_uncheck.png" class="sel_check" wx:if="{{!item.isDefault}}"></image>
+        <view class="light">
+          <view>收件人：<text class="addr_user_name">{{item.name}}</text>{{item.mobile}}</view>
+          <view class="addr_detail">收货地址：{{item.detailedAddress}}</view>
+        </view>
+      </view>
+
+      <view bindtap="addressAdd" data-address-id="{{item.id}}"><i class="iconfont icon-edit"></i></view>
+    </view>
+  </block>
+
+  <view class="flex addr_oper ST_light">
+    <view class="cell_cn btn1"  bindtap="getWXaddress">使用微信地址</view>
+    <view class="cell_cn btn2" bindtap="addressAdd" data-address-id="0">新建收货地址</view>
+  </view>
+</view>

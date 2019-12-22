@@ -1,0 +1,12 @@
+<view class="container">
+  <block wx:for="{{list}}" wx:key="index">
+    <view class="flex att_item light">
+      <view><image src="{{item.createUserImg}}" class="att_user"></image></view>
+      <view>
+        <view><text class="att_name regular">{{item.createUserName}}</text></view>
+        <view class="att_content">{{item.content}}</view>
+        <view class="att_time">{{item.addTimeStr}}</view>
+      </view>
+    </view>
+  </block>
+</view>

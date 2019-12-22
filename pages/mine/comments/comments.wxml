@@ -1,0 +1,46 @@
+<view class="container">
+<block wx:for="{{list}}" wx:key="index">
+  <view class="com_item light">
+    <view class="flex com_tit">
+      <image src="{{item.userInfo.avatarUrl}}" class="att_user"></image>
+      <view class="cell_cn"><text class="att_name regular">{{item.userInfo.nickName}}</text> 回复 你</view>
+      <view class="com_tit_right">
+        <text>{{item.addTime}}</text>
+        <text class="com_reply" data-index="{{index}}" data-user-id="{{item.userId}}" data-id="{{item.id}}" bindtap="handleComment">回复</text>
+      </view>
+    </view>
+
+    <view class="com_content">
+      <text>{{item.content}}</text>
+
+      <view class="flex com_article aic">
+        <text class="cell_cn">{{item.title}}</text>
+        <image src="{{item.topicUrl}}" class="com_icon"  mode="aspectFill"></image>
+      </view>
+    </view>
+  </view>
+</block>
+
+    <!-- <view class="com_item">
+    <view class="flex com_tit">
+      <image src="/images/header.png" class="att_user"></image>
+      <view class="cell_cn"><text class="att_name">仙珍园</text> 回复 你</view>
+      <view class="com_tit_right">
+        <text>2月12日 17:33</text>
+        <text class="com_reply">回复</text>
+      </view>
+    </view>
+
+    <view class="com_content">
+      <text>游泳池里的存水，就好比是肉肉身体里的水分储备。水龙头就是肉肉的根系，能为肉肉补充水分。而排水口呢，就相当于是肉肉的水分消耗，这包括蒸腾作用消耗的水以及光合作用时用掉的水。</text>
+
+      <view class="flex com_article">
+        <text class="cell_cn">一个常年缺光多湿的地方，靠着露天小暖棚的大温差终究还是</text>
+        <image src="/images/header.png" class="com_icon"></image>
+      </view>
+    </view>
+  </view> -->
+</view>
+
+<!-- 调用评论组件 -->
+<comment id="comment" focus="{{commentfocus}}" bind:success="_success"/>

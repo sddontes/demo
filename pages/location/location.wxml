@@ -1,0 +1,20 @@
+<view class='a-z'>
+  <view wx:for="{{cityAZ}}" wx:key="unique">
+    <view data-id='{{item.cityName}}' bindtap='bindAZ'>{{item.cityName}}</view>
+  </view>
+</view>
+
+<view class='city-item-content'>
+  <view wx:for="{{City}}" wx:key="unique">
+    <view wx:if="{{item.cityPinYin}}" class='city-item-A-Z' data-cityname='{{item.name}}'>{{item.name}}</view>
+    <view wx:else  class='city-item cell' data-cityname='{{item.name}}' bindtap='citySelected'>{{item.name}}</view>
+    
+  </view>
+</view>
+
+<!-- 固定在顶部的字母导航 -->
+  <view class="list-fixed ">
+    <view class="fixed-title">
+      {{fixedTitle}}
+    </view>
+  </view>

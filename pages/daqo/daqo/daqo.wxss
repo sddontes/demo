@@ -1,0 +1,19 @@
+@import "/style/daqo.wxss";
+
+.container{
+  padding: 40rpx 0;
+}
+.daqo_header{
+  font-size: 32rpx;
+  color: #212121;
+  padding: 0 40rpx;
+}
+.icon-down{
+  margin:0 16rpx;
+}
+.search_bar{
+  padding-left: 92rpx;
+}
+.search_icon{
+  margin-right: 26rpx;
+}

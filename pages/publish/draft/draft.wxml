@@ -1,0 +1,10 @@
+<view class="container">
+  <!-- <image src="/images/header.png"></image>
+  <view>游泳池里的存水，就好比是肉肉身体里的水分储备。水龙头就是肉</view>
+  <image src="/images/header.png"></image>
+  <view>游泳池里的存水，就好比是肉肉身体里的水分储备。水龙头就是肉</view> -->
+    <view class="light">
+      <import src="../../../wxParse/wxParse.wxml"/>
+      <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+    </view>
+</view>

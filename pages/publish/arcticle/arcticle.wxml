@@ -1,0 +1,41 @@
+<view>
+  <view class="arc_tit medium">
+    <input  bindinput="handleInput" placeholder="点击输入标题" placeholder-style="color:#858585;font-size:34rpx;" value="{{title}}"/>
+  </view>
+  <block wx:for="{{arcList}}" wx:key="{{index}}">
+    <view class="arc_item">
+      <view><image src="/images/close.png" class="close_icon"  data-index="{{index}}" bindtap="handledel"></image></view>
+      <view class="item_header">
+        <textarea placeholder="试着写出哪些不能被忘记的故事" bindinput="handleInputitem" wx:if="{{item.type==1}}" value="{{item.content}}" data-index="{{index}}"/>
+        <image src="{{item.path}}" class="upload_img" wx:if="{{item.type==2}}"   mode="aspectFill"></image>
+      </view>
+      <view class="item_bot flex aic">
+        <view class="cell_cn" bindtap='handleNew' data-index="{{index}}">新建段落</view>
+        <view class="cell_cn add_pic" bindtap='handleImg'  data-index="{{index}}">添加图片</view>
+        <view class="cell_cn flex" wx:if="{{arcList.length > 1}}">
+          <view class="iconfont icon-down cell_cn" wx:if="{{index != (arcList.length-1)}}" data-index="{{index}}" bindtap="handleDown"></view>
+          <view class="iconfont icon-up cell_cn" wx:if="{{index != 0}}" data-index="{{index}}" bindtap='handleUp'></view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+
+  <view class="arc_other light">
+    <view class="pic_cell flex" bindtap='handleLocation'>
+      <image src="/images/location.png" class="local_icon"></image>
+      <view class="cell_cn">所在位置</view>
+      <view class="cell_ft flex aic"><span>{{location}}</span> <i class="iconfont icon-go regular"></i></view>
+    </view>
+
+    <view>可以选择以下分类（只能选一个标签）</view>
+
+    <view class="taglist flex">
+      <block wx:for="{{wikiList}}" wx:key="{{index}}">
+        <view class="tag_item {{activeIndex === index+1?'active_tag':''}}" bindtap="tagClick" data-index="{{index+1}}" data-id="{{item.dicItemValue}}">{{item.dicItemName}}</view>
+      </block>
+    </view>
+
+    <view class="btn medium" bindtap='publistPic'>预览</view>
+  </view>
+</view>

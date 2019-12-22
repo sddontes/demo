@@ -1,0 +1,23 @@
+.arc_item {
+  padding-left: 40rpx;
+  margin-top: 60rpx;
+  line-height: 48rpx;
+  position: relative;
+}
+.arc_icon{
+  width: 160rpx;
+  height: 160rpx;
+  display: block;
+  margin-left: 30rpx;
+  margin-right: 40rpx;
+}
+.arc_num{
+  font-size: 20rpx;
+  color: #747474;
+  margin-top: 6rpx;
+  position: absolute;
+  bottom: 16rpx;
+}
+.arc_num text{
+  margin-right: 20rpx;
+}

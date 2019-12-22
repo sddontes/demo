@@ -1,0 +1,12 @@
+page{
+  background: #f9f9f9;
+  padding-bottom: 90rpx;
+}
+.order_item{
+  padding: 28rpx 40rpx 36rpx 36rpx;
+  background: #fff;
+  margin-top: 20rpx;
+}
+.order_header{
+  margin-bottom: 18rpx;
+}

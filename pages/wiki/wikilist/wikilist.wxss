@@ -1,0 +1,5 @@
+
+@import "/style/wenzhang.wxss";
+.container{
+  padding-bottom: 80rpx;
+}

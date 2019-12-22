@@ -1,0 +1,16 @@
+<view class="container">
+  <block wx:for="{{list}}" wx:key="{{index}}">
+    <view class="cell light">
+      <view><image src="{{item.picUrl}}" class="att_user"></image></view>
+      <view class="cell_cn light">
+        <view><text class="att_name regular">{{item.name}}</text> 赞了</view>
+        <view class="att_time">{{item.uptime}}</view>
+      </view>
+      <view>
+        <!-- <image src="{{item.topicContent}}" class="support_icon"></image> -->
+        <image src="{{item.topicUrl}}" class="support_icon" mode="aspectFill"></image>
+      </view>
+    </view>
+  </block>
+</view>
+

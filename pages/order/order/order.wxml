@@ -1,0 +1,21 @@
+<view class="orders">
+  <navigator hover-class="none" url="../orderdetail/orderdetail?id={{item.id}}" wx:for="{{orderList}}" wx:key="id">
+    <view class="order_item">
+      <view class="flex space order_header aic">
+        <text class="col74">订单编号: {{item.orderSn}}</text>
+        <text class="active">{{item.orderStatusText}}</text>
+      </view>
+      <block wx:for="{{item.goodsList}}" wx:key="id" wx:for-item="gitem">
+        <view class="flex aic">
+          <view><image src="{{gitem.picUrl}}" class="big_img"></image></view>
+          <view class="cell_cn">
+            <view class="order_tit">{{gitem.goodsName}}</view>
+            <view class="active order_price">￥{{gitem.price}}元</view>
+            <view class="order_type">{{gitem.specifications}}</view>
+          </view>
+          <text class="num_color">×{{gitem.number}}</text>
+        </view>
+      </block>
+    </view>
+  </navigator>
+</view>

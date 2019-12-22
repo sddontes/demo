@@ -1,0 +1,77 @@
+<view class="container">
+
+  <!-- <view class="flex aic flex index_header">
+    <navigator hover-class="none" url="../location/location"><view>{{getLocation}}<i class="iconfont icon-down"></i></view></navigator>
+  </view> -->
+
+  <view class="index_banner" wx:if="{{banner.length>=1}}">
+    <swiper class="swiper_box" indicator-dots="true" circular="true" autoplay="false" interval="2000" duration="500">
+        <block wx:for="{{banner}}" wx:key="{{index}}">
+          <swiper-item>
+            <navigator url="{{item.link}}" hover-class="none">
+              <image src="{{item.url}}" class="banner_img"/>
+            </navigator>
+          </swiper-item>
+        </block>
+    </swiper>
+  </view>
+
+  <view class="flex header_nav space">
+    <navigator hover-class="none" open-type="switchTab" url="../market/index/index"><view>
+      <image src="/images/home_icon01.png" class="home_icon"></image>
+      <view>类别一</view>
+    </view></navigator>
+    <navigator hover-class="none" url="../wiki/index/index"><view>
+      <image src="/images/home_icon02.png" class="home_icon"></image>
+      <view>类别二</view>
+    </view></navigator>
+    <navigator hover-class="none" open-type="switchTab" url="../market/index/index"><view>
+      <image src="/images/home_icon01.png" class="home_icon"></image>
+      <view>类别三</view>
+    </view></navigator>
+
+    <navigator hover-class="none" url="../daqo/daqo/daqo">
+    <view>
+      <image src="/images/home_icon03.png" class="home_icon"></image>
+      <view>类别三</view>
+    </view></navigator>
+  </view>
+  <view class="blank_bar"></view>
+  
+  <view class="fix_con">
+  <block wx:for="{{list}}" wx:key="{{index}}">
+    <view>
+      <image class="product_Item_Pic" src="{{item.content[0]}}" data-image="{{item.content[0]}}" bindtap="previewPic"></image>
+      <!-- <scroll-view class="flex index_con_img onepic}}" scroll-x="true" wx:if="{{item.channel == 'pic'}}">
+        <block wx:for="{{item.content}}" wx:for-item="vitem" wx:for-index="vindex" wx:key="{{vindex}}">
+          <image src="{{vitem}}" data-currentimg="{{vitem}}"  data-images="{{item.content}}" bindtap="previewPic" mode="aspectFill"></image>
+        </block>
+      </scroll-view> -->
+    </view> 
+    <view class="product_item_Text">
+      <view class="product_item_Title">给doku的邮件，发到17号的核实完毕消除完了，这个用户是19号还款的</view>
+      <view class="product_item_Price">
+        220元
+        <button
+          class="product_item_purches"
+          type="primary"
+          size="{{primarySize}}"
+          loading="{{loading}}"
+          plain="{{plain}}"
+          disabled="{{disabled}}"
+          bindtap="parchesCar"
+        >
+          加入购物车
+        </button>
+      </view>      
+    </view>
+  </block>
+  </view>
+  <view>
+    <image src="/images/publish_icon.png" class="publish_icon" bindtap='handlePublish'></image>
+  </view>
+</view>
+
+<!-- 调用评论组件 -->
+<comment id="comment" focus="{{commentfocus}}" bind:success="_success"/>
+<!-- <shares id="shares" bind:success="_sharesuccess" bind:delete="_delete" bind:report="_report" showreport="{{showreport}}" showdelete="{{showdelete}}"/> -->

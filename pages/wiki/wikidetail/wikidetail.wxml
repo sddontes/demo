@@ -1,0 +1,77 @@
+<view class="container light">
+    <view class="arc_tit regular">{{item.title}}</view>
+    <view class="arc_user flex aic {{showFixed?'tit_fixed':''}}">
+      <image src="{{item.headPic}}" class="att_user"></image>
+      <!-- <image src="/images/v_icon.png" class="v_icon"></image> -->
+      <view class="cell_cn">
+      <view class="regular" style="font-size:28rpx;">{{item.userName}}</view>
+      <view class="col74">来自{{item.location}}</view>
+      </view>
+      
+      <!-- <view class="col74 cell_cn">{{item.preTime}}</view> -->
+      <view wx:if="{{item.channel}}" class="atten_icon {{item.watched?'atten_avtive': ''}}" data-userId="{{item.userId}}" bindtap='handleAttention' wx:if="{{myuserId!=item.userId}}">{{item.watched?'已关注':'关注'}}</view>
+    </view>
+
+
+
+  <view class="main_content regular {{showFixed?'fixed_con':''}}">
+      <import src="../../../wxParse/wxParse.wxml"/>
+      <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+  </view>
+
+    <view class="handle_zan">
+      <image src="/images/arc_zan.png" class="arc_zan_icon" bindtap='handleUpvotes' data-user-id="{{item.userId}}" data-id="{{item.id}}" wx:if="{{!item.up}}"></image>
+      <image src="/images/arc_zan_active.png" class="arc_zan_icon" bindtap='handleUpvotes' data-user-id="{{item.userId}}" data-id="{{item.id}}" wx:if="{{item.up}}"></image>
+      <view style="color:#747474;">点赞鼓励</view>
+    </view>
+    <view class="zan_like" wx:if="{{item.upvotes.length>0}}">{{item.upvotes.length}}人喜欢</view>
+    <view class="flex aic comment_zan" wx:if="{{item.upvotes.length>0}}">
+        <block wx:for="{{item.upvotes}}" wx:for-item="zitem" wx:for-index="zindex" wx:key="{{zindex}}">
+          <view class="zan_icon" data-id="zitem.userId" bindtap="goHomePage">
+            <image src="{{zitem.headPic}}" style="width:100%;height:100%;border-radius:50%;"></image>
+          </view>
+        </block>
+        <text class="comment_account" wx:if="{{item.upvotes.length>5&&item.upvotes.length<99}}" data-upvotes="{{item.upvotes}}"  data-name="{{item.userName}}" bindtap="goZanList">{{item.upvotes.length}}</text>
+        <text class="comment_account" wx:if="{{item.upvotes.length>99}}" data-upvotes="{{item.upvotes}}"  data-name="{{item.userName}}" bindtap="goZanList">99+</text>
+    </view>
+
+  <view class="main_comment" wx:if="{{item.commentcount>0}}">
+    <view class="all_comments">全部评论({{item.commentcount}})</view>
+    <block wx:for="{{item.commentVoList}}" wx:for-item="citem" wx:for-index="cindex" wx:key="{{cindex}}">
+      <view class="comment_item">
+        <view class="flex aic">
+          <image src="{{citem.userInfo.avatarUrl}}" class="att_user" data-id="citem.userId" bindtap="goHomePage"></image>
+          <view class="flex">
+            <view class="comment_user"  data-id="citem.userId" bindtap="goHomePage">{{citem.userInfo.nickName}}</view> 
+            <block wx:if="{{citem.atuserId!=0}}"><view style="margin:0 10rpx;">回复</view> 
+            <view class="comment_user" data-id="citem.atuserId" bindtap="goHomePage">{{citem.atuserInfo.nickName}}</view></block>
+          </view>
+        </view>
+
+        <view class="comment_tips">{{citem.content}}</view>
+
+        <view class="comment_time">
+            <text class="col74">{{citem.preTime}}</text>
+            <text class="com_reply" bindtap='handleComment' data-user-id="{{citem.userId}}" data-id="{{item.id}}" >回复</text>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class="flex comment_bar aic">
+    <view class="comment_txt" data-user-id="0" data-id="{{item.id}}" bindtap='handleComment'>评论一下</view>
+    <image class="comment_icon" src="/images/arc_collect.png" bindtap='handleCollect' data-user-id="{{item.userId}}" data-id="{{item.id}}" wx:if="{{!item.collected}}"></image>
+    <image class="comment_icon" src="/images/arc_collect_active.png" bindtap='handleCollect' data-user-id="{{item.userId}}" data-id="{{item.id}}" wx:if="{{item.collected}}"></image>
+    <button open-type="share" hover-class='none' data-items="{{item}}">
+    <image class="comment_icon" src="/images/arc_share.png"></image>
+    </button>
+     <image class="comment_icon" src="/images/arc_edit.png" data-items="{{item}}" bindtap="handleShare"></image>
+  </view>
+
+</view>
+
+<!-- 调用评论组件 -->
+<comment id="comment" focus="{{commentfocus}}" bind:success="_success"/>
+<shares id="shares" bind:success="_sharesuccess" showreport="{{showreport}}" showdelete="{{showdelete}}" showfriend="{{false}}" showedit="{{showedit}}" bind:delete="_delete" bind:report="_report" bind:edit="_edit"/>
+
+<image src="/images/share_back.png" class="share_back"  wx:if="{{share}}" bindtap='goIndex'></image>

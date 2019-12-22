@@ -1,0 +1,36 @@
+page{
+  background: #f9f9f9;
+  font-size: 28rpx;
+  padding-bottom: 200rpx;
+}
+.text_area{
+  width: 89%;
+  padding: 34rpx 40rpx;
+  background: #fff;
+  margin-top: 30rpx;
+  line-height: 40rpx;
+}
+.text_plac{
+  color: #1C1B21;
+  font-size: 30rpx;
+}
+.addr_user_name{
+  margin-right: 40rpx;
+}
+.order_addr{
+  color: #848484;
+  margin-top: 10rpx;
+}
+.order_tit_tips{
+  font-size: 20rpx;
+  padding: 22rpx 40rpx 12rpx;
+  color: #747474;
+}
+.empty_area{
+  text-align: center;
+  font-size: 30rpx;
+}
+
+
+
+

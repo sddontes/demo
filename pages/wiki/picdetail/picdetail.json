@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "图片详情",
+  "usingComponents": {
+    "comment": "/component/comment/comment",
+    "shares": "/component/shares/shares"
+  }
+}

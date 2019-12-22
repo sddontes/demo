@@ -1,0 +1,59 @@
+/* pages/purchaseCar/purchaseCar.wxss */
+.car_products {
+  margin: 20rpx 0 120rpx 0;
+  overflow: hidden;
+}
+.car_product {
+
+}
+.car_operate {
+  margin: 20rpx;
+  float: right;
+}
+.num_blocks {
+  display: flex;
+  height: 60rpx;
+  margin: 10rpx 20rpx;
+  width: 300rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  float: left;
+}
+.num_block {
+  flex: 1;
+  text-align: center;
+  border: 1rpx solid #eee;
+  font-size: 40rpx;
+}
+.num_input {
+  flex:2;
+  height: 60rpx;
+  margin: 0 20rpx;
+  text-align: center;
+  border: 1rpx solid #eee;
+}
+
+.buttom_bars {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100rpx;
+  width: 100%;
+  overflow: hidden
+}
+.buttom_bar {
+  float: left;
+  flex: 1;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: white;
+  font-size: 30rpx;
+}
+.buttom_bar_del {
+  background-color: red;
+}
+.buttom_bar_pur {
+  background-color: green;
+}

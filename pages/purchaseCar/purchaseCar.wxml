@@ -1,0 +1,22 @@
+<!--pages/purchaseCar/purchaseCar.wxml-->
+<view  class="car_products">
+  <view class="car_product">
+    <product paramAtoB='{{chuancan}}'></product>
+  </view>
+  <view class="num_blocks">
+    <view class="num_down num_block">-</view>
+    <input class="num_input" type="number" min="1" max="100"></input>
+    <view class="num_up num_block">+</view>
+  </view>
+  <!-- //选中按钮 -->
+  <view class="car_operate">
+    <checkbox-group bindchange="radioChange">
+      <checkbox checked="{{isChoose}}" />
+    </checkbox-group>
+  </view>
+</view>
+<!-- 底部bar -->
+<view class="buttom_bars">
+  <view class="buttom_bar buttom_bar_del">删除</view>
+  <view class="buttom_bar buttom_bar_pur">立即购买</view>
+</view>

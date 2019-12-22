@@ -1,0 +1,11 @@
+<view class="container">
+<block wx:for="{{list}}" wx:key="index">
+  <view class="cell light">
+    <view data-id="{{item.id}}" bindtap="goHomePage"><image src="{{item.picUrl}}" class="att_user"></image></view>
+    <view>
+      <view><text class="att_name regular" data-id="{{item.id}}" bindtap="goHomePage">{{item.name}}</text> 关注了你</view>
+      <view class="att_time">{{item.watchTime}}</view>
+    </view>
+  </view>
+  </block>
+</view>

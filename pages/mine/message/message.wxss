@@ -1,0 +1,10 @@
+.new_dot{
+  display: inline-block;
+  width: 12rpx;
+  height: 12rpx;
+  background: #FF4536;
+  border-radius: 50%;
+  position: relative;
+  top: -18rpx;
+  left: 2rpx;
+}

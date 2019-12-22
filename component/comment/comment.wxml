@@ -1,0 +1,13 @@
+<!-- 分享弹框 -->
+<view>
+  <view class="commodity_screen" bindtap="hidePopup" wx:if="{{showModalStatus}}"></view>
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <!-- <textarea placeholder="评论一下" auto-height focus="{{focus}}" value="{{content}}" fixed="true" cursor-spacing="55" bindinput="handleText"></textarea> -->
+    <input placeholder="评论一下" focus="{{focus}}" value="{{content}}" cursor-spacing="50" bindinput="handleText"/>
+    <view bindtap="_success" class="send {{showActive?'active':''}}">发送</view>
+  </view>
+</view>
+
+
+
+

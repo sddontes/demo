@@ -1,0 +1,45 @@
+.container{
+  padding: 0 40rpx 40rpx;
+}
+.item{
+  padding-top: 54rpx;
+  position: relative;
+}
+.time{
+  color: #696969;
+  text-align: center;
+}
+.top_time{
+  font-size: 26rpx;
+}
+.bot_time{
+  font-size: 24rpx;
+}
+.state01{
+  font-size: 32rpx;
+  color: #212121;
+  font-family: Semibold;
+  margin-bottom: 10rpx;
+}
+.state02{
+  font-size: 26rpx;
+  color: #696969;
+}
+.dot{
+  width: 18rpx;
+  height: 18rpx;
+  background: #d8d8d8;
+  border-radius: 50%;
+  margin: 0 34rpx 0;
+}
+.line{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2rpx;
+  background: #d8d8d8;
+  left: 110rpx;
+}
+.item:first-child .line{
+  top: 54rpx;
+}

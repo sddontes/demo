@@ -1,0 +1,82 @@
+page{
+  background: #f9f9f9;
+  padding-bottom: 132rpx;
+}
+.back_white{
+  background: #fff;
+  font-size: 28rpx;
+}
+.order_con1{
+  padding: 20rpx 84rpx 26rpx 38rpx;
+  margin: 42rpx 0 20rpx;
+  line-height: 40rpx;
+  font-family: PingFangSC-Light;
+}
+.order_user_name{
+  margin-right: 40rpx;
+}
+.order_addr{
+  color: #848484;
+  margin-top: 10rpx;
+}
+
+.order_con2{
+  padding: 50rpx 0 16rpx;
+  margin-bottom: 20rpx;
+}
+.order_item{
+  padding: 0 40rpx 40rpx 36rpx;
+}
+
+.cell:before{
+  left: 0;
+  top: 0;
+}
+.order_quto{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+}
+.apply_btn{
+  width: 144rpx;
+  line-height: 60rpx;
+  color: #FF5142;
+  border: 1px solid  #FF5142;
+  border-radius: 8rpx;
+  text-align: center;
+  font-size: 30rpx;
+  }
+  .apply_btn.dis{
+    color: #d3d3d3;
+    border: 1px solid #d3d3d3;
+  }
+  .addr_no{
+    margin-top: 20rpx;
+  }
+
+  .order_con3{
+    min-height: 136rpx;
+    padding: 20rpx 40rpx;
+    line-height: 40rpx;
+  }
+  .order_msg{
+    color: #848484;
+  }
+  .order_del{
+    font-size: 30rpx;
+    color: 626262;
+    text-align: center;
+    margin-top: 40rpx;
+    line-height: 96rpx;
+  }
+  .order_tips{
+    font-size: 24rpx;
+    margin-top: 100rpx;
+    text-align: center;
+    color: #FF5142;
+  }
+
+  .check_wuliu{
+    background: #ff5142;
+    color: #fff;
+  }

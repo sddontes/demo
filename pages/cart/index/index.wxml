@@ -1,0 +1,53 @@
+
+<view wx:if="{{showContent}}">
+<view  wx:if="{{cartGoods.length<=0}}" class="empty_cart">
+  <image src="/images/cart_empty.png" class="cart_empty_bg"></image>
+  <view>亲，购物车空空如也，赶紧去领养一颗多肉吧</view>
+  <view class="empty_btn" bindtap='goMarket'>去逛逛</view>
+</view>
+
+<view  class="orders" wx:if="{{cartGoods.length>0}}">
+   <scroll-view style='height:{{height}}px;' scroll-y='{{scrollY}}' class='msg-list'>
+       <view wx:for="{{cartGoods}}" wx:key="{{index}}" animation='{{item.wrapAnimation}}' class="arc_item  {{index==0?'mart30':''}}">  
+          <view class="cell cart_item" id='{{item.ids}}' animation='{{item.animation}}' bindtouchstart='ontouchstart' bindtouchmove='ontouchmove' bindtouchend='ontouchend'>
+            <view>
+              <i class="iconfont icon-check sel_check {{item.checked ? 'checked' : ''}}" bindtap="checkedItem" data-item-index="{{index}}"></i>
+            </view>
+            <view class="cart_img">
+              <image src="{{item.picUrl}}" class="big_img"></image>
+              <view class="cart_empty light" wx:if="{{item.maxCount == 0}}">已售罄</view>
+            </view>
+            <view class="cell_cn">
+              <view class="flex aic">
+                <text class="cart_type">{{item.tagId}}</text>
+                <view class="order_tit">{{item.goodsName}}</view>
+              </view>
+              <view class="active order_price ST_light">￥{{item.price}}元</view>
+              <view class="flex aic space">
+                <view class="flex">
+                  <view class="minus_btn" bindtap="cutNumber" data-item-index="{{index}}">-</view>
+                  <input type="number" class="in_btn" data-item-index="{{index}}" value="{{item.number}}" cursor-spacing="20" bindinput="handleInput" bindblur="handleBlur"/>
+                  <view class="plus_btn" bindtap="addNumber" data-item-index="{{index}}">+</view>
+                </view>
+              </view>
+            </view>
+        </view>
+          <view class=''>
+              <view id='{{item.ids}}' class='menu_delete' data-id="{{item.ids}}" data-item-id="{{item.productId}}" bindtap="deleteCart" >
+                  <image src="/images/del_white.png" class="del_icon"></image>
+              </view>
+          </view>
+       </view>
+   </scroll-view>
+
+  <view class="flex aic cart_bot" wx:if="{{cartGoods.length >0}}">
+    <i class="iconfont icon-check sel_check {{checkedAllStatus ? 'checked' : ''}}" bindtap="checkedAll"></i>
+    <text class="check_all">全选</text>
+    <view class=" cell_cn"><text>合计：</text><text class="active ST_light">￥{{cartTotal.checkedGoodsAmount}}元</text></view>
+    <view class="cart_btn {{disCheck?'dis':''}}" bindtap="checkoutOrder">确认</view>
+  </view>
+
+</view>
+</view>
+<!-- 调用modal组件 -->
+<popup id="popup" content="确定移除商品吗？" btn_no="取消" btn_ok="确定" bind:error="_error" bind:success="_success"/>

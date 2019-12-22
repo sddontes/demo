@@ -1,0 +1,20 @@
+/* pages/doc/standard/standard.wxss */
+.doc_views{
+  font-family: PingFangSC-Light;
+  padding: 0 40rpx 100rpx;
+  font-size: 28rpx;
+  color: #1C1B21;
+  line-height: 48rpx;
+}
+.doc_tit{
+  font-family: PingFangSC-Regular;
+  font-size: 36rpx;
+  line-height: 50rpx;
+  margin-top: 80rpx;
+}
+.item_tit{
+  font-family: PingFangSC-Regular;
+}
+.mar40{
+  margin-top: 40rpx;
+}

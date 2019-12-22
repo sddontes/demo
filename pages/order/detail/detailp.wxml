@@ -1,0 +1,16 @@
+<view class="container">
+<block wx:for="{{orderList}}" wx:key="index">
+  <view class="flex item">
+    <view class="line"></view>
+    <view class="time">
+      <view class="top_time">{{item.time1}}</view>
+      <view class="bot_time">{{item.time2}}</view>
+    </view>
+    <view class="dot"></view>
+    <view class="state cell_cn">
+      <!-- <view class="state01">已揽件</view> -->
+      <view class="state02">{{item.AcceptStation}}</view>
+    </view>
+  </view>
+  </block>
+</view>

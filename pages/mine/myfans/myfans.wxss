@@ -1,0 +1,10 @@
+.att_user{
+  margin-right: 32rpx;
+}
+.v_icon{
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  bottom: -10rpx;
+  right: 20rpx;
+}

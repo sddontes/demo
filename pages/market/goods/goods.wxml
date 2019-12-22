@@ -1,0 +1,98 @@
+<view>
+  <view>
+    <swiper class="swiper_box" circular="true" indicator-dots="true" indicator-color="rgba(255,255,255,0.3)" indicator-active-color="#fff">
+      <block wx:for="{{info.gallery}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{item.url}}" class="banner_img" wx:if="{{item.typw==1}}" mode="aspectFit"/>
+
+          <block  wx:if="{{item.typw==2}}">
+            <view wx:if="{{isPlay}}">
+            <video id="myVideo" src="{{item.url}}"  class="banner_img" objectFit="contain" custom-cache="{{false}}" bindpause="bindpause" bindended="bindended" controls="{{true}}"></video>
+            </view>
+            <view wx:else class='video-host-wrapper' bindtap='play'>
+              <image src="{{info.gallery[1].url}}" mode='aspectFit' class="banner_img"/>
+              <image src='/images/play_icon.png' class='play_icon'></image>
+            </view>
+          </block>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="goods_con">
+    <view class="flex space">
+      <view class="goods_price">￥{{checkedSpecPrice}}元</view>
+      <view>已售<text class="active">{{info.saleCount}}件</text></view>
+    </view>
+    <view class="goods_title">
+      <text class="cart_type">{{info.tagId}}</text>{{info.name}}</view>
+    <view class="col74">{{info.brief}}</view>
+  </view>
+
+  <view class="goods_con">
+    <view class="detail_tit"><text></text>详情介绍<text></text></view>
+    <view>
+      <import src="../../../wxParse/wxParse.wxml"/>
+      <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+    </view>
+  </view>
+
+  <view class="cart_bot flex aic">
+    
+    <button class="share_btn" open-type="share" hover-class='none' data-items="{{info}}" data-index="{{index}}">
+          <image src="/images/share.png" class="share_icon"></image>
+    </button>
+    <view class="cell_cn light" bindtap="goWiki">相关百科</view>
+    <view class="cart_btn" bindtap="showDetail">加入购物车</view>
+  </view>
+</view>
+
+
+<!-- 弹框 -->
+<cover-view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></cover-view>
+<!-- 商品详情弹框 -->
+<cover-view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus&&showDetail}}">
+  <cover-view class="pop_item">
+    <cover-image src="/images/close.png" class="close_icon" bindtap='hideModal'></cover-image>
+    <cover-view class="cell aic">
+      <cover-view class="cart_img">
+        <cover-image src="{{info.picUrl}}" class="big_img"></cover-image>
+        <cover-view class="cart_empty ST_light" wx:if="{{!info.isOnSale}}">已售罄</cover-view>
+      </cover-view>
+      <cover-view class="">
+        <cover-view class="cart_type">{{info.tagId}}</cover-view>
+        <cover-view class="order_tit ST_light">库存{{selectNumber}}件</cover-view>
+        <cover-view class="active order_price ST_light">￥{{checkedSpecPrice}}元</cover-view>
+      </cover-view>
+    </cover-view>
+    <block wx:for="{{specificationList}}" wx:key="{{index}}">
+      <cover-view class="cell light">
+        <cover-view class="col55">{{item.name}}</cover-view>
+        <block wx:for="{{item.valueList}}"  wx:for-item="vitem" wx:key="{{vitem.id}}">
+          <cover-view data-id="{{vitem.id}}" data-index="{{index}}" data-name="{{vitem.value}}" bindtap='selectSpec' class="spec_item {{activeIndex === index?'selected': ''}}">{{vitem.value}}</cover-view>
+        </block>
+      </cover-view>
+    </block>
+
+    <cover-view class="cell">
+      <cover-view class="col55 cell_cn">购买数量</cover-view>
+      <cover-view class="flex">
+        <!-- 减号 -->
+        <cover-view class="minus_btn" bindtap="cutNumber">-</cover-view>
+        <!-- 数值 -->
+        <cover-view class="in_btn">{{number}}
+        <cover-view class="top_line"></cover-view>
+        <cover-view class="bot_line"></cover-view>
+        </cover-view>
+        <!-- 加号 -->
+        <cover-view class="plus_btn" bindtap="addNumber">+</cover-view>
+      </cover-view>
+    </cover-view>
+  </cover-view>
+  <cover-view class="btn" bindtap="addCart">确认</cover-view>
+</cover-view>
+
+
+
+
+
+<image src="/images/share_back.png" class="share_back"  wx:if="{{share}}" bindtap='goIndex'></image>

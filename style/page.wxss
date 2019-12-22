@@ -1,0 +1,131 @@
+.page_item{
+  margin-top: 40rpx;
+}
+.index_con_img{
+  height: 560rpx;
+  margin: 30rpx 0;
+  white-space: nowrap;
+}
+
+.index_con_img image:first-child{
+  margin-left: 40rpx;
+}
+.index_con_img image{
+  height: 560rpx;
+  width: 560rpx;
+  margin-right: 12rpx;
+  border-radius: 6rpx;
+}
+.index_con_img.onepic image{
+  /* margin-right: 40rpx; */
+  display: block;
+  width: 670rpx;
+}
+.index_con_arc{
+  margin-top: 28rpx;
+  padding: 0 40rpx;
+  position: relative;
+  color: #fff;
+}
+.index_con_arc image{
+  width: 100%;
+  height: 540rpx;
+  border-radius: 8rpx;
+}
+.index_con_arc .arc_tit{
+  border-radius: 8rpx;
+  background: rgba(0,0,0,.4);
+  position: absolute;
+  height: 540rpx;
+  left: 40rpx;
+  top: 0;
+  right: 40rpx;
+  font-size: 40rpx;
+  text-align: center;
+}
+.arc_tit view{
+  width: 392rpx;
+  margin: 0 auto;
+}
+.arc_type{
+  position: absolute;
+  line-height: 40rpx;
+  top: 12rpx;
+  background: #4AB69E;
+  border-radius: 0 100px 100px 0;
+  padding: 0 18rpx 0 14rpx;
+  font-size: 24rpx;
+}
+.comment_con{
+  padding: 0 40rpx;
+}
+.comment_zan{
+  margin: 28rpx 0;
+}
+.zan_icon{
+  display: inline-block;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin-right: 12rpx;
+  position: relative;
+}
+.zan_icon .v_icon{
+  bottom: -8rpx;
+  right: -6rpx;
+}
+.comment_account{
+  width: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #858585;
+  background: #f6f6f6;
+  border-radius: 50%;
+}
+.more_icon{
+  width: 60rpx;
+  height: 60rpx;
+}
+.comment_txt{
+  font-size: 26rpx;
+}
+.comment_txt view{
+  margin-bottom: 24rpx;
+}
+.comment_total{
+  color: #858585;
+}
+.comment_user{
+  font-family: PingFangSC-Regular;
+  color: #222;
+  margin-right: 4rpx;
+}
+.comment_int{
+  width: 100%;
+  background: #f5f5f5;
+  border-radius: 32rpx;
+  margin-bottom: 60rpx;
+}
+.comment_int view{
+  color: #858585;
+  line-height: 64rpx;
+  padding: 0 24rpx;
+  font-size: 24rpx;
+}
+
+.index_header_icon{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  position: relative;
+  margin-left: 40rpx;
+  margin-right: 28rpx;
+}
+.v_icon{
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  bottom: -6rpx;
+  right: 0;
+}

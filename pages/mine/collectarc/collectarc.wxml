@@ -1,0 +1,27 @@
+<view style="margin-bottom:60rpx">
+  <!-- <view class="blank_bar"></view> -->
+   <scroll-view style='height:{{height}}px;' scroll-y='{{scrollY}}' class='msg-list' bindscroll = 'onScroll'>
+       <view wx:for="{{msgList}}" wx:key="{{index}}"  class='arc_item light' animation='{{item.wrapAnimation}}'> 
+          <navigator  url="/pages/wiki/wikidetail/wikidetail?id={{item.valueId}}" hover-class="none">
+            <view id='{{item.id}}' class='msg flex' animation='{{item.animation}}' bindtouchstart='ontouchstart' bindtouchmove='ontouchmove' bindtouchend='ontouchend'>
+                <view class="cell_cn">      
+                  <text>{{item.title}}</text>
+                  <view class="arc_num">
+                    <text>【{{item.type}}】</text>
+                    <text>{{item.author}}</text>
+                    <text>{{item.readCount}}阅读</text>
+                    <text>{{item.commentcount}}评论</text>
+                  </view>
+                </view>
+                <image class='arc_icon' src="{{item.pic}}" mode="aspectFill"></image>
+            </view>
+          </navigator>
+            
+            <view class='msg_menu'>
+                <view id='{{item.id}}' class='menu_delete' bindtap='handleCollect' data-id="{{item.valueId}}" data-index="{{index}}">
+                    <image src="/images/del_white.png" class="del_icon"></image>
+                </view>
+            </view>
+       </view>
+   </scroll-view>
+</view>

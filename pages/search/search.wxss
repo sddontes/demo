@@ -1,0 +1,64 @@
+@import "/style/wenzhang.wxss";
+@import "/style/goods.wxss";
+@import "/style/daqo.wxss";
+.fixtop{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 4;
+  height: 254rpx;
+}
+.msgcon{
+  margin-top: 304rpx;
+  padding-bottom: 40rpx;
+}
+.search_bar{
+  margin: 40rpx;
+  padding-left: 36rpx;
+}
+.search_bar .input-placeholder{
+  font-size: 24rpx;
+}
+.search_bar input{
+  font-size: 30rpx;
+}
+.search_icon{
+  margin-left: 84rpx;
+}
+.search_close{
+  width: 30rpx;
+  height: 30rpx;
+  background: #aaa;
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 28rpx;
+  border-radius: 50%;
+  margin:0 36rpx;
+}
+.search_nav{
+  padding: 0 184rpx 18rpx;
+  color: #414141;
+}
+.search_nav text{
+  padding-bottom: 14rpx;
+  border-bottom: 4rpx solid transparent;
+}
+.search_nav .search_active{
+  border-bottom: 4rpx solid #ff5e5e;
+}
+.blank_bar{
+  height: 20rpx;
+  background: #f5f5f5;
+}
+
+.daqo_con{
+  padding: 304rpx 40rpx 60rpx;
+}
+
+.goods_con{
+  padding: 304rpx 40rpx 60rpx;
+  flex-wrap: wrap;
+}
+

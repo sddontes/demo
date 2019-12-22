@@ -1,0 +1,32 @@
+.container{
+  padding:46rpx 40rpx;
+}
+.com_tit{
+  color: #747474;
+  margin-bottom: 16rpx;
+}
+.com_tit_right{
+  font-size: 20rpx;
+}
+.com_reply{
+  color: #4A90E2;
+  margin-left: 30rpx;
+}
+.att_name{
+  color: #222;
+}
+.com_content{
+  padding-left: 68rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+.com_article{
+  background: #fafafa;
+  padding: 20rpx 40rpx 20rpx 28rpx;
+  font-size: 24rpx;
+  margin: 26rpx auto 42rpx;
+}
+.com_icon{
+  width: 80rpx;
+  height: 80rpx;
+}

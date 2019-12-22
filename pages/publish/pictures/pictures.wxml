@@ -1,0 +1,39 @@
+<view class="container">
+  <textarea placeholder="记录多肉植物的美好点滴...." bindinput="handleInput"/>
+
+  <view class="uploadBox cell">
+    <block wx:for="{{files}}" wx:key="{{index}}">
+      <view class="upload_item">
+        <image src="{{item.path}}" class="upload_img"  mode="aspectFill"></image>
+        <view class="upload_del" bindtap='handledel' data-index="{{index+1}}">x</view>
+        <block wx:if="{{item.percent != 100}}">
+          <view class="upload_bg" style="top:{{item.percent}}%"></view>
+          <view class="upload_txt" wx:if="{{!item.uploadFail}}"><view>图片上传中</view>{{item.percent}}%</view>
+          <view class="upload_txt txt_fail" wx:if="{{item.uploadFail}}"><view>上传失败</view></view>
+        </block>
+
+      </view> 
+    </block>
+
+    <view class="upload_item add_box" bindtap="chooseImage" wx:if="{{files.length<9}}">
+      <image src="/images/add_icon.png" class="add_icon"></image>
+      <view>添加图片</view>
+    </view>
+  </view>
+
+  <view class="pic_cell cell light" bindtap='handleLocation'>
+    <image src="/images/location.png" class="local_icon"></image>
+    <view class="cell_cn">所在位置</view>
+    <view class="cell_ft"><span>{{location}}</span><i class="iconfont icon-go"></i></view>
+  </view>
+
+  <view class="light">可以选择以下分类（只能选一个标签）</view>
+
+  <view class="taglist flex light">
+    <block wx:for="{{wikiList}}" wx:key="{{index}}">
+      <view class="tag_item {{activeIndex === index+1?'active_tag':''}}" bindtap="tagClick" data-index="{{index+1}}" data-id="{{item.dicItemValue}}">{{item.dicItemName}}</view>
+    </block>
+  </view>
+
+  <view class="btn medium" bindtap='publistPic'>发布</view>
+</view>

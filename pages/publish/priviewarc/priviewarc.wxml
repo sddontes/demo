@@ -1,0 +1,15 @@
+<view class="container">
+    <view class="arc_tit">{{title}}</view>
+    <view class="arc_user flex user_icon">
+      <image src="{{header}}" class="att_user"></image>
+      <!-- <image src="/images/v_icon.png" class="v_icon"></image> -->
+      <view class="col74" style="margin-right:20rpx;">{{name}}</view>
+      <view class="col74">{{date}}</view>
+    </view>
+  <view class="light">
+      <import src="../../../wxParse/wxParse.wxml"/>
+      <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+  </view>
+  <view class="btn medium" bindtap='subAcrticle'>确认发布</view>
+  <view class="btn dis medium" bindtap='handleback'>返回编辑</view>
+</view>
